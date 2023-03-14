@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 130275186}
   - component: {fileID: 130275185}
   - component: {fileID: 130275184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8193,7 +8193,7 @@ MonoBehaviour:
   gravity: -39.24
   jumpHeight: 2
   groundCheck: {fileID: 1192236575}
-  groundDistance: 0.4
+  groundDistance: 0.2
   groundMask:
     serializedVersion: 2
     m_Bits: 2147483647

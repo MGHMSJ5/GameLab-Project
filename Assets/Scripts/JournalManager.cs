@@ -30,13 +30,13 @@ public class JournalManager : MonoBehaviour
 
     IEnumerator WaitALittleA()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         isActive = true;
     }
 
     IEnumerator WaitALittleB()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         isActive = false;
     }
 }

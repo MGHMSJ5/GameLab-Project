@@ -25,6 +25,21 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity; //use this to make the player fall with gravity
     bool isGrounded; //true means that the player is on the ground. False means that the player is in the air
 
+
+    [Header("Zooming")]
+    public Camera playerCamera;
+    public KeyCode zoomButton;
+    bool canZoom = true;
+    public float timeToZoom = 0.3f;
+    public float zoomPOV = 30f;
+    private float defaultPOV;
+    private Coroutine zoomRoutine;
+
+    private void Awake()
+    {
+        defaultPOV = playerCamera.fieldOfView;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -53,5 +68,53 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime; //add the gravity on the velocity on the y axis
 
         controller.Move(velocity * Time.deltaTime); //add the velocity to the player. Multiply it with Time.deltaTime again to complete the formule (because time is t squared (t2))
+
+        //zoom
+        if (canZoom)
+        {
+            HandleZoom();
+        }
+    }
+
+    private void HandleZoom()
+    {
+        if (Input.GetKeyDown(zoomButton))
+        {
+            if (zoomRoutine != null)
+            {
+                StopCoroutine(zoomRoutine);
+                zoomRoutine = null;
+            }
+
+            zoomRoutine = StartCoroutine(ToggleZoom(true));
+        }
+
+        if (Input.GetKeyUp(zoomButton))
+        {
+            if (zoomRoutine != null)
+            {
+                StopCoroutine(zoomRoutine);
+                zoomRoutine = null;
+            }
+
+            zoomRoutine = StartCoroutine(ToggleZoom(false));
+        }
+    }
+
+    private IEnumerator ToggleZoom(bool isEnter)
+    {
+        float targetPOV = isEnter ? zoomPOV : defaultPOV;
+        float startingPOV = playerCamera.fieldOfView;
+        float timeElapsed = 0;
+
+        while (timeElapsed < timeToZoom)
+        {
+            playerCamera.fieldOfView = Mathf.Lerp(startingPOV, targetPOV, timeElapsed / timeToZoom);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        playerCamera.fieldOfView = targetPOV;
+        zoomRoutine = null;
     }
 }

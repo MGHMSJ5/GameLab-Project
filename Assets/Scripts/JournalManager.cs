@@ -5,7 +5,8 @@ using UnityEngine;
 public class JournalManager : MonoBehaviour
 {
     public GameObject journalObj;
-    public bool isActive = false;
+    bool isActive = false;
+    public KeyCode getJournal;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,13 @@ public class JournalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isActive && Input.GetKey(KeyCode.Q))
+        if (!isActive && Input.GetKey(getJournal))
         {
             journalObj.SetActive(true);
             StartCoroutine(WaitALittleA());
         }
 
-        if (isActive && Input.GetKey(KeyCode.Q))
+        if (isActive && Input.GetKey(getJournal))
         {
             journalObj.SetActive(false);
             StartCoroutine(WaitALittleB());

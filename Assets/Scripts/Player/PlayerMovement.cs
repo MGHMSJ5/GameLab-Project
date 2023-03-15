@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Zooming")]
     public Camera playerCamera;
+    public GameObject binocularVision;
     public KeyCode zoomButton;
     bool canZoom = true;
     public float timeToZoom = 0.3f;
@@ -73,6 +74,15 @@ public class PlayerMovement : MonoBehaviour
         if (canZoom)
         {
             HandleZoom();
+        }
+
+        if (defaultPOV != playerCamera.fieldOfView)
+        {
+            binocularVision.SetActive(true);
+        }
+        else if (defaultPOV == playerCamera.fieldOfView)
+        {
+            binocularVision.SetActive(false);
         }
     }
 

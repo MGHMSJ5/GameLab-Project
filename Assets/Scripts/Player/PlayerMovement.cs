@@ -25,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity; //use this to make the player fall with gravity
     bool isGrounded; //true means that the player is on the ground. False means that the player is in the air
 
+    [Header("Running")]
+    public KeyCode runningButton;
+    bool isRunning = false;
+    public float runningSpeed = 15f;
+    float originalSpeed;
+
 
     [Header("Zooming")]
     public Camera playerCamera;
@@ -39,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         defaultPOV = playerCamera.fieldOfView;
+        originalSpeed = speed;
     }
 
     // Update is called once per frame
@@ -69,6 +76,19 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime; //add the gravity on the velocity on the y axis
 
         controller.Move(velocity * Time.deltaTime); //add the velocity to the player. Multiply it with Time.deltaTime again to complete the formule (because time is t squared (t2))
+
+        //running
+        if (Input.GetKeyDown(runningButton))
+        {
+            speed = runningSpeed;
+        }
+
+        if (Input.GetKeyUp(runningButton))
+        {
+            speed = originalSpeed;
+        }
+
+
 
         //zoom
         if (canZoom)

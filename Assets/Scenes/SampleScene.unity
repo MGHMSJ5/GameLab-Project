@@ -8519,6 +8519,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 2147483647
+  runningButton: 304
+  runningSpeed: 15
   playerCamera: {fileID: 330585545}
   binocularVision: {fileID: 647199720}
   zoomButton: 99

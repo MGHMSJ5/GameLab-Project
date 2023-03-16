@@ -27,9 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Running")]
     public KeyCode runningButton;
-    bool isRunning = false;
     public float runningSpeed = 15f;
     float originalSpeed;
+
+    [Header("Crouching")]
+    public GameObject playerCameraObj;
+    public KeyCode crouchButton;
+    public float cameraDown = 1f;
+    public float crouchingSpeed = 5f;
 
 
     [Header("Zooming")]
@@ -88,7 +93,18 @@ public class PlayerMovement : MonoBehaviour
             speed = originalSpeed;
         }
 
+        //crouching
+        if (Input.GetKeyDown(crouchButton))
+        {
+            speed = crouchingSpeed;
+            playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, -cameraDown, 0);
+        }
 
+        if (Input.GetKeyUp(crouchButton))
+        {
+            speed = originalSpeed;
+            playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, cameraDown, 0);
+        }
 
         //zoom
         if (canZoom)

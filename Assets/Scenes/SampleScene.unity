@@ -8521,6 +8521,10 @@ MonoBehaviour:
     m_Bits: 2147483647
   runningButton: 304
   runningSpeed: 15
+  playerCameraObj: {fileID: 330585543}
+  crouchButton: 306
+  cameraDown: 1
+  crouchingSpeed: 5
   playerCamera: {fileID: 330585545}
   binocularVision: {fileID: 647199720}
   zoomButton: 99

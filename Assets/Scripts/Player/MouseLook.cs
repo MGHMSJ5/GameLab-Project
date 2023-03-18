@@ -10,6 +10,10 @@ public class MouseLook : MonoBehaviour
     [Header("Reference to player model")]
     public Transform playerBody; //this will be the player
     float xRotation = 0f; //will be used to rotate around the x-axis (to look up and down)
+
+    [Header("Raycasting")]
+    public float scanningDistance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +33,19 @@ public class MouseLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f); //apply the rotation, Quaternion is responsible for rotation. This is also used so that line 24 can happen
         playerBody.Rotate(Vector3.up * mouseX); //rotate the player body based on the mouse movement (horizontal movement)
 
+
+        //Raycasting
+        RaycastHit hit;
+        Ray landingRay = new Ray(transform.position, transform.forward);
+
+        Debug.DrawRay(transform.position, transform.forward * scanningDistance);
+
+        if (Physics.Raycast(landingRay, out hit, scanningDistance))
+        {
+            if (hit.collider.tag == "Animal")
+            {
+                Debug.Log("Hij doet t!!");
+            }
+        }
     }
 }

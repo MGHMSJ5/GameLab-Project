@@ -37,19 +37,8 @@ public class PlayerMovement : MonoBehaviour
     public float crouchingSpeed = 5f;
 
 
-    [Header("Zooming")]
-    public Camera playerCamera;
-    public GameObject binocularVision;
-    public KeyCode zoomButton;
-    bool canZoom = true;
-    public float timeToZoom = 0.3f;
-    public float zoomPOV = 30f;
-    private float defaultPOV;
-    private Coroutine zoomRoutine;
-
     private void Awake()
     {
-        defaultPOV = playerCamera.fieldOfView;
         originalSpeed = speed;
     }
 
@@ -105,62 +94,5 @@ public class PlayerMovement : MonoBehaviour
             speed = originalSpeed;
             playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, cameraDown, 0);
         }
-
-        //zoom
-        if (canZoom)
-        {
-            HandleZoom();
-        }
-
-        if (defaultPOV != playerCamera.fieldOfView)
-        {
-            binocularVision.SetActive(true);
-        }
-        else if (defaultPOV == playerCamera.fieldOfView)
-        {
-            binocularVision.SetActive(false);
-        }
-    }
-
-    private void HandleZoom()
-    {
-        if (Input.GetKeyDown(zoomButton))
-        {
-            if (zoomRoutine != null)
-            {
-                StopCoroutine(zoomRoutine);
-                zoomRoutine = null;
-            }
-
-            zoomRoutine = StartCoroutine(ToggleZoom(true));
-        }
-
-        if (Input.GetKeyUp(zoomButton))
-        {
-            if (zoomRoutine != null)
-            {
-                StopCoroutine(zoomRoutine);
-                zoomRoutine = null;
-            }
-
-            zoomRoutine = StartCoroutine(ToggleZoom(false));
-        }
-    }
-
-    private IEnumerator ToggleZoom(bool isEnter)
-    {
-        float targetPOV = isEnter ? zoomPOV : defaultPOV;
-        float startingPOV = playerCamera.fieldOfView;
-        float timeElapsed = 0;
-
-        while (timeElapsed < timeToZoom)
-        {
-            playerCamera.fieldOfView = Mathf.Lerp(startingPOV, targetPOV, timeElapsed / timeToZoom);
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        playerCamera.fieldOfView = targetPOV;
-        zoomRoutine = null;
     }
 }

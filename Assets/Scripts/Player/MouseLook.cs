@@ -11,9 +11,23 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody; //this will be the player
     float xRotation = 0f; //will be used to rotate around the x-axis (to look up and down)
 
+    [Header("Zooming")]
+    public Camera cameraOptions;
+    public GameObject binocularVision;
+    public KeyCode zoomButton;
+    bool canZoom = true;
+    public float timeToZoom = 0.3f;
+    public float zoomPOV = 30f;
+    private float defaultPOV;
+    private Coroutine zoomRoutine;
+
     [Header("Raycasting")]
     public float scanningDistance;
 
+    private void Awake()
+    {
+        defaultPOV = cameraOptions.fieldOfView;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +47,21 @@ public class MouseLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f); //apply the rotation, Quaternion is responsible for rotation. This is also used so that line 24 can happen
         playerBody.Rotate(Vector3.up * mouseX); //rotate the player body based on the mouse movement (horizontal movement)
 
+        //zoom
+        if (canZoom)
+        {
+            HandleZoom();
+        }
+
+        if (defaultPOV != cameraOptions.fieldOfView)
+        {
+            binocularVision.SetActive(true);
+        }
+        else if (defaultPOV == cameraOptions.fieldOfView)
+        {
+            binocularVision.SetActive(false);
+        }
+
 
         //Raycasting
         RaycastHit hit;
@@ -40,12 +69,52 @@ public class MouseLook : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * scanningDistance);
 
-        if (Physics.Raycast(landingRay, out hit, scanningDistance))
+        if (Physics.Raycast(landingRay, out hit, scanningDistance) && cameraOptions.fieldOfView == zoomPOV)
         {
             if (hit.collider.tag == "Animal")
             {
                 Debug.Log("Hij doet t!!");
             }
         }
+    }
+    private void HandleZoom()
+    {
+        if (Input.GetKeyDown(zoomButton))
+        {
+            if (zoomRoutine != null)
+            {
+                StopCoroutine(zoomRoutine);
+                zoomRoutine = null;
+            }
+
+            zoomRoutine = StartCoroutine(ToggleZoom(true));
+        }
+
+        if (Input.GetKeyUp(zoomButton))
+        {
+            if (zoomRoutine != null)
+            {
+                StopCoroutine(zoomRoutine);
+                zoomRoutine = null;
+            }
+
+            zoomRoutine = StartCoroutine(ToggleZoom(false));
+        }
+    }
+    private IEnumerator ToggleZoom(bool isEnter)
+    {
+        float targetPOV = isEnter ? zoomPOV : defaultPOV;
+        float startingPOV = cameraOptions.fieldOfView;
+        float timeElapsed = 0;
+
+        while (timeElapsed < timeToZoom)
+        {
+            cameraOptions.fieldOfView = Mathf.Lerp(startingPOV, targetPOV, timeElapsed / timeToZoom);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        cameraOptions.fieldOfView = targetPOV;
+        zoomRoutine = null;
     }
 }

@@ -26,20 +26,20 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded; //true means that the player is on the ground. False means that the player is in the air
 
     [Header("Running")]
-    public KeyCode runningButton;
-    public float runningSpeed = 15f;
-    float originalSpeed;
+    public KeyCode runningButton; //this will be the button that will activate the running
+    public float runningSpeed = 15f; //this will be the new running speed
+    float originalSpeed; //this will be the original speed
 
     [Header("Crouching")]
-    public GameObject playerCameraObj;
-    public KeyCode crouchButton;
-    public float cameraDown = 1f;
-    public float crouchingSpeed = 5f;
+    public GameObject playerCameraObj; //get the camera (since for crouching, the camera will be a bit lower)
+    public KeyCode crouchButton; //this will be the button that will make the player crouch
+    public float cameraDown = 1f; //how much the camera will go down
+    public float crouchingSpeed = 5f; //the speed of the player when crouching
 
 
     private void Awake()
     {
-        originalSpeed = speed;
+        originalSpeed = speed; //set the original speed
     }
 
     // Update is called once per frame
@@ -72,27 +72,27 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime); //add the velocity to the player. Multiply it with Time.deltaTime again to complete the formule (because time is t squared (t2))
 
         //running
-        if (Input.GetKeyDown(runningButton))
+        if (Input.GetKeyDown(runningButton)) //if running button is pressed
         {
-            speed = runningSpeed;
+            speed = runningSpeed; //change speed
         }
 
-        if (Input.GetKeyUp(runningButton))
+        if (Input.GetKeyUp(runningButton)) //if running button is released
         {
-            speed = originalSpeed;
+            speed = originalSpeed; //set speed back to normal
         }
 
         //crouching
-        if (Input.GetKeyDown(crouchButton))
+        if (Input.GetKeyDown(crouchButton)) //if the crouching button is pressed
         {
-            speed = crouchingSpeed;
-            playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, -cameraDown, 0);
+            speed = crouchingSpeed; //set the speed slower (crouching speed)
+            playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, -cameraDown, 0); //change the camera position (down) depending on what posisiton it is
         }
 
-        if (Input.GetKeyUp(crouchButton))
+        if (Input.GetKeyUp(crouchButton)) //if the crouching button is released
         {
-            speed = originalSpeed;
-            playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, cameraDown, 0);
+            speed = originalSpeed; //set the speed back to normal
+            playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, cameraDown, 0); //set the camera back up
         }
     }
 }

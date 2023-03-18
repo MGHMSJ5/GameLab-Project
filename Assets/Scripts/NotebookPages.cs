@@ -19,16 +19,17 @@ public class NotebookPages : MonoBehaviour
         {
             journalObj.SetActive(true);
             notebookPages.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
             StartCoroutine(WaitALittleA());
-            Time.timeScale = 0f;
         }
 
         if (isActive && Input.GetKey(getJournal))
         {
             journalObj.SetActive(false);
             notebookPages.SetActive(false);
-            StartCoroutine(WaitALittleB());
             Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            StartCoroutine(WaitALittleB());
         }
     }
 
@@ -64,6 +65,7 @@ public class NotebookPages : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         isActive = true;
+        Time.timeScale = 0f;
     }
 
     IEnumerator WaitALittleB()

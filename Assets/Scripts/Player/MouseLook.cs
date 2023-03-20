@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
@@ -25,11 +26,13 @@ public class MouseLook : MonoBehaviour
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
     int infoToAppear;
     float timerHit = 0;
-    public float scanTime = 4;
+    public float scanTime = 4f;
     public List<GameObject> InformationBlocks = new List<GameObject>(); //list with all of the parent GameObjects of the information about the endangered animals and plants. 
+    public Slider scanSlider;
 
     private void Awake()
     {
+        scanSlider.maxValue = scanTime;
         defaultPOV = cameraOptions.fieldOfView; //set the original fieldOfView
     }
     // Start is called before the first frame update
@@ -81,7 +84,8 @@ public class MouseLook : MonoBehaviour
                 {
                     timerHit += Time.deltaTime;
                     infoToAppear = i;
-                }if(hit.collider.tag != InformationBlocks[infoToAppear].name)
+                }
+                if(hit.collider.tag != InformationBlocks[infoToAppear].name)
                 {
                        timerHit = 0;
                 }
@@ -94,8 +98,11 @@ public class MouseLook : MonoBehaviour
         if (timerHit > scanTime)
         {
             InformationBlocks[infoToAppear].SetActive(true);
+            InformationBlocks.RemoveAt(infoToAppear);
             timerHit = 0;
+            infoToAppear = 0;
         }
+        scanSlider.value = timerHit;
     }
     private void HandleZoom()
     {

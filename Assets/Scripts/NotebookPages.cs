@@ -15,22 +15,38 @@ public class NotebookPages : MonoBehaviour
 
     void Update()
     {
-        if (!isActive && Input.GetKey(getJournal))
+        if (!isActive && Input.GetKeyDown(getJournal))
         {
             journalObj.SetActive(true);
             notebookPages.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;
-            StartCoroutine(WaitALittleA());
+            Time.timeScale = 0f;
+
         }
 
-        if (isActive && Input.GetKey(getJournal))
+        if (isActive && Input.GetKeyDown(getJournal))
         {
             journalObj.SetActive(false);
             notebookPages.SetActive(false);
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
-            StartCoroutine(WaitALittleB());
         }
+
+        if (!isActive && Input.GetKeyUp(getJournal))
+        {
+            isActive = true;
+        }
+
+        if (isActive && Input.GetKeyUp(getJournal))
+        {
+            StartCoroutine(WaitToSetFalse());
+        }
+    }
+
+    IEnumerator WaitToSetFalse()
+    {
+        yield return new WaitForSeconds(0.2f);
+        isActive = false;
     }
 
     public void ToPlants()
@@ -59,18 +75,5 @@ public class NotebookPages : MonoBehaviour
         Pages[currentPage].SetActive(false);
         currentPage = currentPage - 1;
         Pages[currentPage].SetActive(true);
-    }
-
-    IEnumerator WaitALittleA()
-    {
-        yield return new WaitForSeconds(0.3f);
-        isActive = true;
-        Time.timeScale = 0f;
-    }
-
-    IEnumerator WaitALittleB()
-    {
-        yield return new WaitForSeconds(0.3f);
-        isActive = false;
     }
 }

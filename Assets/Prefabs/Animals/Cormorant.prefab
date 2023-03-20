@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8061546755138909110}
   - component: {fileID: 6363451697625234451}
   - component: {fileID: 9199572916350355673}
+  - component: {fileID: 3330336622223185850}
   m_Layer: 0
   m_Name: Cormorant
-  m_TagString: Untagged
+  m_TagString: Cormorant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,3 +87,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3330336622223185850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7254048456664262924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7096198, y: 0.89792216, z: 0.860945}
+  m_Center: {x: 0, y: 0.45838767, z: -0.17462371}

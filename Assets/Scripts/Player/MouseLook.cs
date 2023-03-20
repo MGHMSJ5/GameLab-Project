@@ -23,6 +23,10 @@ public class MouseLook : MonoBehaviour
 
     [Header("Raycasting")]
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
+    int infoToAppear;
+    float timerHit = 0;
+    public float scanTime = 4;
+    public List<GameObject> InformationBlocks = new List<GameObject>(); //list with all of the parent GameObjects of the information about the endangered animals and plants. 
 
     private void Awake()
     {
@@ -71,10 +75,26 @@ public class MouseLook : MonoBehaviour
 
         if (Physics.Raycast(landingRay, out hit, scanningDistance) && cameraOptions.fieldOfView == zoomPOV) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
-            if (hit.collider.tag == "Animal") //(for test) if the collider that the ray hit has the tag "Animal", then
+            for (int i = 0; i < InformationBlocks.Count; i++)
             {
-                Debug.Log("It works!!");
+                if (InformationBlocks[i].name == hit.collider.tag)
+                {
+                    timerHit += Time.deltaTime;
+                    infoToAppear = i;
+                }if(hit.collider.tag != InformationBlocks[infoToAppear].name)
+                {
+                       timerHit = 0;
+                }
             }
+        }else
+        {
+            timerHit = 0;
+        }
+
+        if (timerHit > scanTime)
+        {
+            InformationBlocks[infoToAppear].SetActive(true);
+            timerHit = 0;
         }
     }
     private void HandleZoom()

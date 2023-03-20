@@ -29,6 +29,7 @@ public class MouseLook : MonoBehaviour
     public float scanTime = 4f;
     public List<GameObject> InformationBlocks = new List<GameObject>(); //list with all of the parent GameObjects of the information about the endangered animals and plants. 
     public Slider scanSlider;
+    public GameObject scanDone;
 
     private void Awake()
     {
@@ -97,10 +98,7 @@ public class MouseLook : MonoBehaviour
 
         if (timerHit > scanTime)
         {
-            InformationBlocks[infoToAppear].SetActive(true);
-            InformationBlocks.RemoveAt(infoToAppear);
-            timerHit = 0;
-            infoToAppear = 0;
+            StartCoroutine(ScanIsDone());
         }
         scanSlider.value = timerHit;
     }
@@ -143,5 +141,16 @@ public class MouseLook : MonoBehaviour
 
         cameraOptions.fieldOfView = targetPOV; //(just to be sure) set the fieldOfView to the target view (depends if the parameter was true (zoom in) of false(zoom out))
         zoomRoutine = null;
+    }
+
+    IEnumerator ScanIsDone()
+    {
+        InformationBlocks[infoToAppear].SetActive(true);
+        InformationBlocks.RemoveAt(infoToAppear);
+        timerHit = 0;
+        infoToAppear = 0;
+        scanDone.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        scanDone.SetActive(false);
     }
 }

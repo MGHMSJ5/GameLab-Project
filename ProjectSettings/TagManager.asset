@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Animal
+  - Otter
+  - Cormorant
   layers:
   - Default
   - TransparentFX

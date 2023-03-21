@@ -150,7 +150,7 @@ public class MouseLook : MonoBehaviour
         timerHit = 0;
         infoToAppear = 0;
         scanDone.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         scanDone.SetActive(false);
     }
 }

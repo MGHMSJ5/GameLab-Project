@@ -21,6 +21,8 @@ public class MouseLook : MonoBehaviour
     public float zoomPOV = 30f; //how far the player can zoom in
     private float defaultPOV; //this will be the original fieldOfFiew
     private Coroutine zoomRoutine;
+    public GameObject journal;
+    NotebookPages notebookPages;
 
     [Header("Raycasting")]
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
@@ -39,7 +41,8 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       Cursor.lockState = CursorLockMode.Locked; //hide and lock the cursor. (So that the cursor won't leave the screen
+        Cursor.lockState = CursorLockMode.Locked; //hide and lock the cursor. (So that the cursor won't leave the screen
+        notebookPages = journal.GetComponent<NotebookPages>();
     }
 
     // Update is called once per frame
@@ -64,10 +67,12 @@ public class MouseLook : MonoBehaviour
         if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
         {
             binocularVision.SetActive(true); //active this so that the player has the bonocular vision
+            notebookPages.canOpenJournal = false;
         }
         else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
         {
             binocularVision.SetActive(false); //deactivate the binocular vision
+            notebookPages.canOpenJournal = true;
         }
 
 

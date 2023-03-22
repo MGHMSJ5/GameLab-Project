@@ -13,33 +13,38 @@ public class NotebookPages : MonoBehaviour
     bool isActive = false;
     public KeyCode getJournal;
 
+    public bool canOpenJournal = true;
+
     void Update()
     {
-        if (!isActive && Input.GetKeyDown(getJournal))
+        if (canOpenJournal)
         {
-            journalObj.SetActive(true);
-            notebookPages.SetActive(true);
-            Cursor.lockState = CursorLockMode.Confined;
-            Time.timeScale = 0f;
+            if (!isActive && Input.GetKeyDown(getJournal))
+            {
+                journalObj.SetActive(true);
+                notebookPages.SetActive(true);
+                Cursor.lockState = CursorLockMode.Confined;
+                Time.timeScale = 0f;
 
-        }
+            }
 
-        if (isActive && Input.GetKeyDown(getJournal))
-        {
-            journalObj.SetActive(false);
-            notebookPages.SetActive(false);
-            Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+            if (isActive && Input.GetKeyDown(getJournal))
+            {
+                journalObj.SetActive(false);
+                notebookPages.SetActive(false);
+                Time.timeScale = 1f;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
 
-        if (!isActive && Input.GetKeyUp(getJournal))
-        {
-            isActive = true;
-        }
+            if (!isActive && Input.GetKeyUp(getJournal))
+            {
+                isActive = true;
+            }
 
-        if (isActive && Input.GetKeyUp(getJournal))
-        {
-            StartCoroutine(WaitToSetFalse());
+            if (isActive && Input.GetKeyUp(getJournal))
+            {
+                StartCoroutine(WaitToSetFalse());
+            }
         }
     }
 

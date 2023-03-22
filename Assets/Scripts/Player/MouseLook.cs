@@ -19,7 +19,7 @@ public class MouseLook : MonoBehaviour
     bool canZoom = true; //if true > player can zoom, if false > player can't zoom
     public float timeToZoom = 0.3f; //the time it takes to fully zoom in
     public float zoomPOV = 30f; //how far the player can zoom in
-    private float defaultPOV; //this will be the original fieldOfFiew
+    private float defaultPOV; //this will be the original fieldOfView
     private Coroutine zoomRoutine;
     public GameObject journal;
     NotebookPages notebookPages;
@@ -32,6 +32,7 @@ public class MouseLook : MonoBehaviour
     public List<GameObject> InformationBlocks = new List<GameObject>(); //list with all of the parent GameObjects of the information about the endangered animals and plants. 
     public Slider scanSlider;
     public GameObject scanDone;
+    public LayerMask ignoreBorders;
 
     private void Awake()
     {
@@ -82,7 +83,7 @@ public class MouseLook : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * scanningDistance); //line that will be drawn in the scene to see the raycast
 
-        if (Physics.Raycast(landingRay, out hit, scanningDistance) && cameraOptions.fieldOfView == zoomPOV) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
+        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView == zoomPOV) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
             for (int i = 0; i < InformationBlocks.Count; i++)
             {

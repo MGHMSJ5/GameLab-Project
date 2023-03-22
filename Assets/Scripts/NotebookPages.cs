@@ -13,7 +13,7 @@ public class NotebookPages : MonoBehaviour
     bool isActive = false;
     public KeyCode getJournal;
 
-    public bool canOpenJournal = true;
+    public bool canOpenJournal;
 
     void Update()
     {

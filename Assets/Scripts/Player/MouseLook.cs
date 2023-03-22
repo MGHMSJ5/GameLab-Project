@@ -16,7 +16,7 @@ public class MouseLook : MonoBehaviour
     public Camera cameraOptions; //this will be used to change the fieldOfView of the camera
     public GameObject binocularVision; //this is the binocular obj which will be visible when the player is zooming
     public KeyCode zoomButton; //the button that will be used to zoom
-    bool canZoom = true; //if true > player can zoom, if false > player can't zoom
+    public bool canZoom; //if true > player can zoom, if false > player can't zoom
     public float timeToZoom = 0.3f; //the time it takes to fully zoom in
     public float zoomPOV = 30f; //how far the player can zoom in
     private float defaultPOV; //this will be the original fieldOfView
@@ -24,7 +24,7 @@ public class MouseLook : MonoBehaviour
     public GameObject journal;
     NotebookPages notebookPages;
 
-    [Header("Raycasting")]
+    [Header("Raycasting Scanning")]
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
     int infoToAppear;
     float timerHit = 0;
@@ -33,6 +33,12 @@ public class MouseLook : MonoBehaviour
     public Slider scanSlider;
     public GameObject scanDone;
     public LayerMask ignoreBorders;
+    public bool hasPickedUp;
+
+    [Header("Raycasting Pickup")]
+    public float pickupDistance;
+    public KeyCode pickupButton;
+    public GameObject buttonUI;
 
     private void Awake()
     {
@@ -65,23 +71,26 @@ public class MouseLook : MonoBehaviour
             HandleZoom(); //run this
         }
 
-        if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
+        if (hasPickedUp)
         {
-            binocularVision.SetActive(true); //active this so that the player has the bonocular vision
-            notebookPages.canOpenJournal = false;
-        }
-        else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
-        {
-            binocularVision.SetActive(false); //deactivate the binocular vision
-            notebookPages.canOpenJournal = true;
+            if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
+            {
+                binocularVision.SetActive(true); //active this so that the player has the bonocular vision
+                notebookPages.canOpenJournal = false;
+            }
+            else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
+            {
+                binocularVision.SetActive(false); //deactivate the binocular vision
+                notebookPages.canOpenJournal = true;
+            }
         }
 
 
-        //Raycasting
+        //Raycasting scanning
         RaycastHit hit; //is storing everything that gets hit by the ray
         Ray landingRay = new Ray(transform.position, transform.forward); //the direction of the ray. transform.forward is used to point the ray in the direction the camera is facing (since the player will be able to scan from the camera's view)
 
-        Debug.DrawRay(transform.position, transform.forward * scanningDistance); //line that will be drawn in the scene to see the raycast
+        Debug.DrawRay(transform.position, transform.forward * pickupDistance); //line that will be drawn in the scene to see the raycast
 
         if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView == zoomPOV) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
@@ -107,6 +116,30 @@ public class MouseLook : MonoBehaviour
             StartCoroutine(ScanIsDone());
         }
         scanSlider.value = timerHit;
+
+        //pickup
+        
+
+        //Rayasting pickup
+        if (Physics.Raycast(landingRay, out hit, pickupDistance))
+        {
+            if (hit.collider.tag == "Pickup")
+            {
+                buttonUI.SetActive(true);
+                if (Input.GetKeyDown(pickupButton))
+                {
+                    hit.transform.gameObject.SetActive(false);
+                }
+            }
+            if (hit.collider.tag != "Pickup")
+            {
+                buttonUI.SetActive(false);
+            }
+        }
+        else
+        {
+            buttonUI.SetActive(false);
+        }
     }
     private void HandleZoom()
     {

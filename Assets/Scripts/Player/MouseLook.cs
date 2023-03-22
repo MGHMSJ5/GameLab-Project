@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MouseLook : MonoBehaviour
 {
@@ -42,7 +43,9 @@ public class MouseLook : MonoBehaviour
     public KeyCode pickupButton;
     public GameObject buttonUI;
     public int notificationCounter;
-    
+    public string numberOfNotifications;
+    public TextMeshProUGUI notificationNumberUI;
+
 
     private void Awake()
     {
@@ -129,7 +132,8 @@ public class MouseLook : MonoBehaviour
         scanSlider.value = timerHit;
 
         //pickup
-        
+        numberOfNotifications = notificationCounter.ToString();
+        notificationNumberUI.text = numberOfNotifications;
 
         //Rayasting pickup
         if (Physics.Raycast(landingRay, out hit, pickupDistance))

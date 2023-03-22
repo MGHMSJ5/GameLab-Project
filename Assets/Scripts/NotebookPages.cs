@@ -15,6 +15,8 @@ public class NotebookPages : MonoBehaviour
 
     public bool canOpenJournal;
 
+    public GameObject scanDoneUI;
+
     void Update()
     {
         if (canOpenJournal)
@@ -23,6 +25,7 @@ public class NotebookPages : MonoBehaviour
             {
                 journalObj.SetActive(true);
                 notebookPages.SetActive(true);
+                scanDoneUI.SetActive(false); //remove the check from screen. this check appears after done scanning. And will stay there if notebook is activated without this line of code
                 Cursor.lockState = CursorLockMode.Confined;
                 Time.timeScale = 0f;
 

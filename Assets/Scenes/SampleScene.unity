@@ -11430,6 +11430,7 @@ MonoBehaviour:
   journalObj: {fileID: 553998524}
   getJournal: 113
   canOpenJournal: 0
+  scanDoneUI: {fileID: 1845687330}
 --- !u!1 &1825424952
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class MouseLook : MonoBehaviour
     public GameObject journal;
     NotebookPages notebookPages;
 
-    [Header("Raycasting Scanning")]
+    [Header("Scanning")]
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
     int infoToAppear;
     float timerHit = 0;
@@ -34,11 +34,15 @@ public class MouseLook : MonoBehaviour
     public GameObject scanDone;
     public LayerMask ignoreBorders;
     public bool hasPickedUp;
+    public GameObject notificationUI;
 
-    [Header("Raycasting Pickup")]
+    
+    [Header("Pickup")]
     public float pickupDistance;
     public KeyCode pickupButton;
     public GameObject buttonUI;
+    public int notificationCounter;
+    
 
     private void Awake()
     {
@@ -71,19 +75,26 @@ public class MouseLook : MonoBehaviour
             HandleZoom(); //run this
         }
 
-        if (hasPickedUp)
-        {
             if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
             {
                 binocularVision.SetActive(true); //active this so that the player has the bonocular vision
-                notebookPages.canOpenJournal = false;
             }
             else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
             {
                 binocularVision.SetActive(false); //deactivate the binocular vision
-                notebookPages.canOpenJournal = true;
             }
-        }
+
+            if (hasPickedUp)
+            {
+                if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
+                {
+                    notebookPages.canOpenJournal = false;
+                }
+                else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
+                {
+                    notebookPages.canOpenJournal = true;
+                }
+            }
 
 
         //Raycasting scanning
@@ -184,7 +195,11 @@ public class MouseLook : MonoBehaviour
 
     IEnumerator ScanIsDone()
     {
+        notificationUI.SetActive(true);
         InformationBlocks[infoToAppear].SetActive(true);
+        InfoNotification infoNotification = InformationBlocks[infoToAppear].GetComponent<InfoNotification>();
+        infoNotification.hasSeen = true;
+        notificationCounter += 1;
         InformationBlocks.RemoveAt(infoToAppear);
         timerHit = 0;
         infoToAppear = 0;

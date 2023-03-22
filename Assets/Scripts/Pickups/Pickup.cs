@@ -8,7 +8,9 @@ public class Pickup : MonoBehaviour
     MouseLook mouseLook;
 
     public GameObject binocularGO;
+    public GameObject binocularUI;
     public GameObject journalGO;
+    public GameObject journalUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +43,12 @@ public class Pickup : MonoBehaviour
     void ActivateZooming()
     {
         mouseLook.canZoom = true;
+        binocularUI.SetActive(true);
     }
 
     void ActivateJournal()
     {
         mouseLook.hasPickedUp = true;
+        journalUI.SetActive(true);
     }
 }

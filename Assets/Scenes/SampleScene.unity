@@ -12911,7 +12911,7 @@ PrefabInstance:
     - target: {fileID: 5641104814856434963, guid: e349e2bf80816334fb8d77e9e3f09abc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.839996
+      value: 58.109997
       objectReference: {fileID: 0}
     - target: {fileID: 5641104814856434963, guid: e349e2bf80816334fb8d77e9e3f09abc,
         type: 3}
@@ -13131,7 +13131,7 @@ MonoBehaviour:
   controller: {fileID: 2037492128}
   speed: 10
   gravity: -39.24
-  jumpHeight: 2
+  jumpHeight: 1
   groundCheck: {fileID: 1192236575}
   groundDistance: 0.2
   groundMask:
@@ -14808,13 +14808,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702532021337723688, guid: fefdc6f1dc1bce8429fb5e0b4098d97d,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85590494
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702532021337723688, guid: fefdc6f1dc1bce8429fb5e0b4098d97d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.9
       objectReference: {fileID: 0}
     - target: {fileID: 8702532021337723688, guid: fefdc6f1dc1bce8429fb5e0b4098d97d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: 6.1581
       objectReference: {fileID: 0}
     - target: {fileID: 8702532021337723688, guid: fefdc6f1dc1bce8429fb5e0b4098d97d,
         type: 3}
@@ -14903,7 +14908,7 @@ PrefabInstance:
     - target: {fileID: 3421012537139320564, guid: 8e22fc2266f85d94d980a89b51100fb9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.39
+      value: 57.66
       objectReference: {fileID: 0}
     - target: {fileID: 3421012537139320564, guid: 8e22fc2266f85d94d980a89b51100fb9,
         type: 3}

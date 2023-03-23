@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2321968012679649242}
   - component: {fileID: 8851658870838993173}
   - component: {fileID: 9024917845261717089}
+  - component: {fileID: 6226534001630608415}
   m_Layer: 0
   m_Name: PorchPole2
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6226534001630608415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837889836340674112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 0.019999998, z: 0.019999996}
+  m_Center: {x: 0.008984122, y: 0.008581935, z: -0.0000000018626451}
 --- !u!1 &5417114001356096965
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   - component: {fileID: 3027317454494122667}
   - component: {fileID: 4223379351106391965}
   - component: {fileID: 5737185752914455554}
+  - component: {fileID: 1617757705582036537}
   m_Layer: 0
   m_Name: PorchPole1
   m_TagString: Untagged
@@ -166,6 +181,64 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1617757705582036537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417114001356096965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 0.019999998, z: 0.019999996}
+  m_Center: {x: 0.008984182, y: 0.008581995, z: -0.0000000018626451}
+--- !u!1 &8325941266401840344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6366846391032056501}
+  - component: {fileID: 6411411930125420022}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6366846391032056501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325941266401840344}
+  m_LocalRotation: {x: -0.057468254, y: 0, z: 0, w: 0.99834734}
+  m_LocalPosition: {x: 0.07, y: 1.06, z: -0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8702532021337723688}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -6.589, y: 0, z: 0}
+--- !u!65 &6411411930125420022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325941266401840344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.5, y: 0.25, z: 5.5}
+  m_Center: {x: 0, y: -0.59, z: -10}
 --- !u!1 &8326674603417815442
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8702532021337723688}
+  - component: {fileID: 437554808174609624}
   m_Layer: 0
   m_Name: HouseGraybox
   m_TagString: Untagged
@@ -197,9 +271,23 @@ Transform:
   - {fileID: 4589997522859845098}
   - {fileID: 3027317454494122667}
   - {fileID: 2321968012679649242}
+  - {fileID: 6366846391032056501}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 73.71, z: 0}
+--- !u!65 &437554808174609624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326674603417815442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.5, y: 1.7, z: 6.7}
+  m_Center: {x: -0.0015853533, y: -5.8559737, z: -9.324823}
 --- !u!1 &8627889386898335284
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +299,7 @@ GameObject:
   - component: {fileID: 4589997522859845098}
   - component: {fileID: 510335049010697827}
   - component: {fileID: 8481763752689847801}
+  - component: {fileID: 1765632482773358222}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -283,3 +372,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1765632482773358222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627889386898335284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03473741, y: 0.012202633, z: 0.03626026}
+  m_Center: {x: 4.280406e-10, y: 0.000043698074, z: 0.008130133}

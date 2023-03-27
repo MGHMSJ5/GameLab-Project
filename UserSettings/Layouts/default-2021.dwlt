@@ -20,6 +20,7 @@ MonoBehaviour:
     height: 820.8
   m_ShowMode: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
@@ -31,6 +32,11 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 300}
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+  m_Title: Scene
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> Merge-main-and-collision
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -124,6 +130,7 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1536
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -136,13 +143,18 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     height: 730.8
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
   controlID: 4976
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,6 +174,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     width: 1272.8
     height: 770.8
@@ -178,14 +191,19 @@ MonoBehaviour:
   vertical: 1
   controlID: 117
 =======
+=======
+>>>>>>> Merge-main-and-collision
     width: 1288.8
     height: 730.8
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
   controlID: 4847
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,6 +223,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -218,14 +237,19 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     width: 1288.8
     height: 480.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 4848
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,6 +267,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     width: 627.2
     height: 456.8
@@ -255,6 +280,10 @@ MonoBehaviour:
     height: 480.8
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+    width: 650.4
+    height: 480.8
+>>>>>>> Merge-main-and-collision
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -277,6 +306,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -290,6 +320,8 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 650.4
     y: 0
     width: 638.4
@@ -348,13 +380,17 @@ MonoBehaviour:
     height: 250
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -416,6 +452,8 @@ MonoBehaviour:
 =======
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -431,6 +469,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -447,6 +486,8 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 280.8
     y: 0
     width: 569.60004
@@ -456,8 +497,11 @@ MonoBehaviour:
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &13
@@ -475,6 +519,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -491,6 +536,8 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 850.4
     y: 0
     width: 438.40002
@@ -500,8 +547,11 @@ MonoBehaviour:
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &14
@@ -514,12 +564,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_Name: InspectorWindow
 =======
 <<<<<<< HEAD
   m_Name: InspectorWindow
 =======
+=======
+>>>>>>> Merge-main-and-collision
   m_Name: 
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
@@ -527,6 +580,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -540,14 +594,19 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 1288.8
     y: 0
     width: 247.19995
     height: 730.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -562,6 +621,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
 =======
@@ -571,11 +631,15 @@ MonoBehaviour:
   m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> Merge-main-and-collision
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_Text: Console
     m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000,
@@ -588,10 +652,15 @@ MonoBehaviour:
     m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000,
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000,
+>>>>>>> Merge-main-and-collision
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -603,21 +672,29 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 650.4
     y: 73.6
     width: 636.4
     height: 459.8
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> Merge-main-and-collision
   m_SerializedViewNames: []
   m_SerializedViewValues: []
   m_PlayModeViewName: GameView
@@ -682,8 +759,11 @@ MonoBehaviour:
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -707,6 +787,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     width: 626.2
     height: 435.8
@@ -719,6 +800,10 @@ MonoBehaviour:
     height: 459.8
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+    width: 649.4
+    height: 459.8
+>>>>>>> Merge-main-and-collision
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -728,6 +813,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       snapOffset: {x: -101, y: -26}
 =======
@@ -737,6 +823,9 @@ MonoBehaviour:
       snapOffset: {x: -100, y: -25.600006}
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+      snapOffset: {x: -100, y: -25.600006}
+>>>>>>> Merge-main-and-collision
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -962,6 +1051,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_Target: {x: 0.55616045, y: 10.201317, z: -34.15831}
     speed: 2
@@ -977,6 +1067,11 @@ MonoBehaviour:
     m_Value: {x: 23.964336, y: 3.2458768, z: 4.240566}
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+    m_Target: {x: 23.964336, y: 3.2458768, z: 4.240566}
+    speed: 2
+    m_Value: {x: 23.964336, y: 3.2458768, z: 4.240566}
+>>>>>>> Merge-main-and-collision
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1023,6 +1118,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -1046,6 +1142,15 @@ MonoBehaviour:
     m_Value: 0.56785345
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+    m_Target: {x: 0.049979243, y: 0.92899096, z: -0.1339346, w: 0.3421373}
+    speed: 2
+    m_Value: {x: 0.04956436, y: 0.9297721, z: -0.13404918, w: 0.33926082}
+  m_Size:
+    m_Target: 1.5298783
+    speed: 2
+    m_Value: 0.56785345
+>>>>>>> Merge-main-and-collision
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1091,6 +1196,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -1102,17 +1208,23 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 0
     y: 554.4
     width: 279.8
     height: 229
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -1179,6 +1291,8 @@ MonoBehaviour:
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 =======
+=======
+>>>>>>> Merge-main-and-collision
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 16}
@@ -1208,7 +1322,10 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1218,8 +1335,154 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+=======
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 280.80002
+    y: 554.4
+    width: 567.60004
+    height: 229
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Prefabs/Flowers
+    m_Globs: []
+    m_OriginalText: 
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Prefabs/Flowers
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: D:\Documents\Studie\Year 2\Semester 2\Coaching\GameLab Game\GameLab-Project
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 55}
+    m_SelectedIDs: de0a0100
+    m_LastClickedID: 68318
+    m_ExpandedIDs: 00000000b06b0000b26b0000b46b0000be6b000000ca9a3b
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000b06b0000b26b0000b46b000000ca9a3b
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 12}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 207
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> Merge-main-and-collision
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinSize: {x: 200, y: 200}
@@ -1244,6 +1507,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     x: 0
     y: 530.4
@@ -1255,11 +1519,18 @@ MonoBehaviour:
     width: 567.60004
     height: 229
 >>>>>>> Stashed changes
+=======
+    x: 850.4
+    y: 554.4
+    width: 436.40002
+    height: 229
+>>>>>>> Merge-main-and-collision
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
   m_SearchFilter:
@@ -1590,6 +1861,8 @@ MonoBehaviour:
 =======
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1611,6 +1884,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -1622,12 +1896,17 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 =======
 =======
+=======
+>>>>>>> Merge-main-and-collision
     x: 1288.8
     y: 73.6
     width: 246.19995
     height: 709.8
+<<<<<<< HEAD
 >>>>>>> 59d2f669e410a697176ed555b231b73f82dce380
 >>>>>>> Stashed changes
+=======
+>>>>>>> Merge-main-and-collision
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default

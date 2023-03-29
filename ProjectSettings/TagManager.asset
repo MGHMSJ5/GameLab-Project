@@ -11,6 +11,7 @@ TagManager:
   - Pickup
   - Linnaea borealis
   - Viola persicifolia
+  - Door
   layers:
   - Default
   - TransparentFX

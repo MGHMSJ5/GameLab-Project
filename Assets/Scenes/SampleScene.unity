@@ -3370,7 +3370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dee82a93292124d8335697e4a2eec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 400
+  mouseSensitivity: 50
   playerBody: {fileID: 2037492129}
   cameraOptions: {fileID: 330585545}
   binocularVision: {fileID: 647199720}

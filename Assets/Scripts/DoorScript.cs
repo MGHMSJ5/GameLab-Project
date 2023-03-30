@@ -11,18 +11,10 @@ public class DoorScript : MonoBehaviour
     private bool opened = false;
     private Animator anim;
 
+    public GameObject pickUpIcon;
+
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Pressed();
-            Debug.Log("You Pressed E");
-        }
-
-    }
-
-    void Pressed()
     {
         RaycastHit doorhit;
 
@@ -30,10 +22,22 @@ public class DoorScript : MonoBehaviour
         {
             if (doorhit.transform.tag == "Door")
             {
-                anim = doorhit.transform.GetComponentInParent<Animator>();
-                opened = !opened;
-                anim.SetBool("Opened", !opened);
+                pickUpIcon.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    anim = doorhit.transform.GetComponentInParent<Animator>();
+                    anim.SetBool("Opened", !opened);
+                    opened = !opened;
+                }
             }
+            if (doorhit.collider.tag != "Door")
+            {
+                pickUpIcon.SetActive(false);
+            }
+        }
+        else
+        {
+            pickUpIcon.SetActive(false);
         }
     }
 }

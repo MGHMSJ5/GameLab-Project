@@ -106,7 +106,7 @@ public class MouseLook : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * pickupDistance); //line that will be drawn in the scene to see the raycast
 
-        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView == zoomPOV) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
+        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView == zoomPOV && hasPickedUp) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
             for (int i = 0; i < InformationBlocks.Count; i++)
             {

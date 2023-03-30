@@ -5774,6 +5774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 330585546}
   MaxDistance: 5
+  pickUpIcon: {fileID: 1140993905}
 --- !u!1 &789798365
 GameObject:
   m_ObjectHideFlags: 0
@@ -9901,6 +9902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HouseGrayboxWithDoors
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3f1d3f771b52325479ce996a65f14b86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3517794772239816897, guid: 3f1d3f771b52325479ce996a65f14b86,
         type: 3}
@@ -16758,6 +16764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HouseGraybox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326674603417815442, guid: fefdc6f1dc1bce8429fb5e0b4098d97d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702532021337723688, guid: fefdc6f1dc1bce8429fb5e0b4098d97d,
         type: 3}

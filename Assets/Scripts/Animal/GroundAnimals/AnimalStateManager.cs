@@ -12,20 +12,12 @@ public class AnimalStateManager : MonoBehaviour
     public NavMeshAgent agent;
     public Transform chaser;
     public float distWhenStartRunning = 5f;
-    public PlayerMovement playerMovement;
+    public PlayerMovement PlayerMovement;
     public Vector3 normDir = new Vector3();
     public int detectDistance = 6;
-
-    public LayerMask floorMask = 0;
-
-    public float walkingSpeed;
-    public float runningSpeed;
-
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = chaser.GetComponent<PlayerMovement>();
-
         currentState = NormalState; //starting state for the state machine
 
         currentState.EnterState(this); //"this" is a reference to the context (this EXACT Monobehaviour script)
@@ -48,6 +40,7 @@ public class AnimalStateManager : MonoBehaviour
         {
             return;
         }
+
         normDir = (chaser.position - transform.position).normalized;
     }
 
@@ -56,5 +49,4 @@ public class AnimalStateManager : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
-
 }

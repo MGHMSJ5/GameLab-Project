@@ -473,7 +473,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -790,7 +790,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -1187,7 +1187,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -1224,7 +1224,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 87
   m_IsActive: 1
 --- !u!4 &106883338
 Transform:
@@ -1602,7 +1602,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -2681,7 +2681,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -3211,7 +3211,7 @@ PrefabInstance:
     - target: {fileID: 3391076820136193320, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8281324208057390348, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
@@ -3430,6 +3430,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211871395}
   m_CullTransparentMesh: 1
+--- !u!21 &212455095
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_GrassComputeHLSL(Clone)
+  m_Shader: {fileID: 4800000, guid: 53fd1cf801f7472408fc78bd3af11d06, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &213162988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7067841216362198871, guid: e117390cf67b48f46a61ea40b1c02eb1,
@@ -4987,7 +5014,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -5356,7 +5383,7 @@ PrefabInstance:
     - target: {fileID: 3391076820136193320, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8281324208057390348, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
@@ -5924,7 +5951,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -6124,7 +6151,7 @@ MonoBehaviour:
   topTint: {r: 0.58403474, g: 0.8301887, b: 0.449555, a: 1}
   bottomTint: {r: 0.12589012, g: 0.1792453, b: 0.02096831, a: 1}
   castShadow: 0
-  m_InstantiatedMaterial: {fileID: 751303286}
+  m_InstantiatedMaterial: {fileID: 212455095}
 --- !u!114 &364346362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9579,7 +9606,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -9983,7 +10010,7 @@ PrefabInstance:
     - target: {fileID: 2055573097783961174, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7122451198100917420, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
@@ -10840,7 +10867,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -11303,7 +11330,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -11425,7 +11452,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -11525,7 +11552,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -12952,7 +12979,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -13713,33 +13740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751116386}
   m_CullTransparentMesh: 1
---- !u!21 &751303286
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_GrassComputeHLSL(Clone)
-  m_Shader: {fileID: 4800000, guid: 53fd1cf801f7472408fc78bd3af11d06, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &753594208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f1d3f771b52325479ce996a65f14b86,
@@ -14372,7 +14372,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -14821,7 +14821,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -15087,7 +15087,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -15266,7 +15266,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -18592,7 +18592,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -19367,7 +19367,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -19951,7 +19951,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -20846,7 +20846,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -21676,7 +21676,7 @@ PrefabInstance:
     - target: {fileID: 2055573097783961174, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7122451198100917420, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
@@ -23440,7 +23440,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -23710,7 +23710,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -23820,7 +23820,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -24145,7 +24145,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -24249,7 +24249,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -24478,7 +24478,7 @@ PrefabInstance:
     - target: {fileID: 2055573097783961174, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7122451198100917420, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
@@ -25313,7 +25313,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -25924,7 +25924,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -27701,7 +27701,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -27876,7 +27876,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -28666,7 +28666,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -28776,7 +28776,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -29312,7 +29312,7 @@ PrefabInstance:
     - target: {fileID: 3391076820136193320, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8281324208057390348, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
@@ -30135,7 +30135,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -30382,7 +30382,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -30899,7 +30899,7 @@ GameObject:
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 3
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1899442605
@@ -32309,7 +32309,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -32419,7 +32419,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -34645,7 +34645,7 @@ PrefabInstance:
     - target: {fileID: 5913025749998279067, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387241129599086592, guid: 84b5ceffe9184014880bb0e53d37522e,
         type: 3}
@@ -35432,7 +35432,7 @@ PrefabInstance:
     - target: {fileID: 3391076820136193320, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8281324208057390348, guid: 26339facf4c916a4682a780ff84858eb,
         type: 3}
@@ -35756,7 +35756,7 @@ PrefabInstance:
     - target: {fileID: 3195491176250677448, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 128
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3425646441826334861, guid: a6dee4485db526947b8b6d9fb7071620,
         type: 3}
@@ -36064,7 +36064,7 @@ PrefabInstance:
     - target: {fileID: 2055573097783961174, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}
       propertyPath: floorMask.m_Bits
-      value: 64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7122451198100917420, guid: 687dbbb7aa96a5d4d91f888274c31d3d,
         type: 3}

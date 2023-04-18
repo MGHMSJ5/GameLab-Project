@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
+    public PlayerMovement playerMovement;
+
     private void Awake()
     {
         if (instance != null)
@@ -55,6 +57,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        //playerMovement.enabled = false;
 
         ContinueStory();
     }
@@ -64,6 +67,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        //playerMovement.enabled = true;
     }
 
     private void ContinueStory()

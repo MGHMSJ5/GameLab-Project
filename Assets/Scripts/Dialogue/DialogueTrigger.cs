@@ -5,6 +5,8 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     //The visual cue
+    public GameObject mainObject;
+
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
@@ -25,20 +27,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-
-            visualCue.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-            }
-        }
-        else
-        {
-            visualCue.SetActive(false);
+            mainObject.SetActive(false);
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {

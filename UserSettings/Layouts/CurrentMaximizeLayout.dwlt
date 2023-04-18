@@ -20,11 +20,19 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1536
+<<<<<<< HEAD
     height: 730.8
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
   controlID: 3476
+=======
+    height: 722.8
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 9397
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -49,7 +57,11 @@ MonoBehaviour:
     x: 301.8
     y: 19
     width: 910.8
+<<<<<<< HEAD
     height: 411.8
+=======
+    height: 407
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -98,15 +110,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 910.8
+<<<<<<< HEAD
       height: 390.8
     m_Scale: {x: 0.4523148, y: 0.4523148}
     m_Translation: {x: 455.4, y: 195.4}
+=======
+      height: 386
+    m_Scale: {x: 0.44675925, y: 0.44675925}
+    m_Translation: {x: 455.4, y: 193}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -1006.8209
       y: -432
       width: 2013.6418
@@ -114,6 +133,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.4523148
   m_LastWindowPixelSize: {x: 1138.5, y: 514.75}
+=======
+      x: -1019.34094
+      y: -432
+      width: 2038.6819
+      height: 864
+    m_MinimalGUI: 1
+  m_defaultScale: 0.44675925
+  m_LastWindowPixelSize: {x: 1138.5, y: 508.75}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -139,11 +167,19 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1213.6
+<<<<<<< HEAD
     height: 730.8
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
   controlID: 3477
+=======
+    height: 722.8
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 9353
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,11 +200,19 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1213.6
+<<<<<<< HEAD
     height: 432.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 3455
+=======
+    height: 428
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 9320
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,9 +231,15 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 300.8
+<<<<<<< HEAD
     height: 432.8
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    height: 428
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -219,7 +269,11 @@ MonoBehaviour:
     x: 0
     y: 73.6
     width: 299.8
+<<<<<<< HEAD
     height: 411.8
+=======
+    height: 407
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -230,7 +284,11 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: 30fbffff6a6600008a680000426b0000
+=======
+      m_ExpandedIDs: b0f1ffff34fbffffe46500008e6800007a690000
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -246,7 +304,11 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
+<<<<<<< HEAD
         m_ClientGUIView: {fileID: 5}
+=======
+        m_ClientGUIView: {fileID: 0}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -272,7 +334,11 @@ MonoBehaviour:
     x: 300.8
     y: 0
     width: 912.8
+<<<<<<< HEAD
     height: 432.8
+=======
+    height: 428
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -306,7 +372,11 @@ MonoBehaviour:
     x: 300.80002
     y: 73.6
     width: 910.8
+<<<<<<< HEAD
     height: 411.8
+=======
+    height: 407
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -542,9 +612,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 1346.8687, y: 591.8257, z: -74.73181}
     speed: 2
     m_Value: {x: 1346.8687, y: 591.8257, z: -74.73181}
+=======
+    m_Target: {x: 30.18392, y: -0.62149584, z: -33.149006}
+    speed: 2
+    m_Value: {x: 30.18392, y: -0.62149584, z: -33.149006}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,6 +654,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
       m_Size: {x: 2, y: 2}
     zGrid:
       m_Fade:
@@ -587,10 +664,14 @@ MonoBehaviour:
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 2, y: 2}
+=======
+      m_Size: {x: 0, y: 0}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
@@ -598,13 +679,27 @@ MonoBehaviour:
     m_Target: 804.93134
     speed: 2
     m_Value: 804.93134
+=======
+    m_Target: {x: 0.04101801, y: 0.9462505, z: -0.13286318, w: 0.29208532}
+    speed: 2
+    m_Value: {x: 0.041017212, y: 0.94623214, z: -0.1328606, w: 0.29207966}
+  m_Size:
+    m_Target: 14.873644
+    speed: 2
+    m_Value: 14.873644
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_CameraSettings:
+<<<<<<< HEAD
     m_Speed: 1.0005
     m_SpeedNormalized: 0.49999997
+=======
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -655,7 +750,9 @@ MonoBehaviour:
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 6892470163178689491, guid: e38aaaa1b6eaeab41b3f4e36ed0ebba6, type: 2}
+    - {fileID: -5214919293678592963, guid: bcaaea241f1edcf4cb0b8e96247726ec, type: 2}
     m_ValueSerializationHelper:
+<<<<<<< HEAD
     - e00: 0.7432632
       e01: 0
       e02: 0
@@ -664,6 +761,32 @@ MonoBehaviour:
       e11: 0.7432632
       e12: 0
       e13: 45.32263
+=======
+    - e00: 0.8412767
+      e01: 0
+      e02: 0
+      e03: 122.782936
+      e10: 0
+      e11: 0.8412767
+      e12: 0
+      e13: 28.757994
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.8412767
+      e01: 0
+      e02: 0
+      e03: 136.78297
+      e10: 0
+      e11: 0.8412767
+      e12: 0
+      e13: 23.758007
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
       e20: 0
       e21: 0
       e22: 1
@@ -700,24 +823,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: ConsoleWindow
+=======
+  m_Name: ProjectBrowser
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 432.8
     width: 1213.6
     height: 298
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
+=======
+    y: 428
+    width: 1213.6
+    height: 294.8
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 11}
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
   - {fileID: 13}
+<<<<<<< HEAD
   m_Selected: 1
   m_LastSelected: 0
+=======
+  m_Selected: 0
+  m_LastSelected: 2
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -740,9 +881,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 506.4
     width: 1212.6
     height: 277
+=======
+    y: 501.6
+    width: 1212.6
+    height: 273.8
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -761,12 +908,17 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts/Dialogue
+=======
+    - Assets
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Scripts/Dialogue
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\leamo\Desktop\Game\GameLab-Project
@@ -777,6 +929,18 @@ MonoBehaviour:
     m_SelectedIDs: 7e720000
     m_LastClickedID: 29310
     m_ExpandedIDs: 000000009271000000ca9a3b
+=======
+  - Assets
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\Mark Sinninghe\Documents\GitHub\GameLab-Project
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 6.200012}
+    m_SelectedIDs: 0a6e0000
+    m_LastClickedID: 28170
+    m_ExpandedIDs: 000000000a6e000000ca9a3b
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -804,7 +968,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000009271000000ca9a3b
+=======
+    m_ExpandedIDs: 000000000a6e000000ca9a3b
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -829,9 +997,15 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 706b0000
     m_LastClickedInstanceID: 27504
     m_HadKeyboardFocusLastEvent: 0
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -881,10 +1055,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 506.4
     width: 1212.6
     height: 277
+=======
+    x: 2249
+    y: 726.5
+    width: 920
+    height: 250
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -912,9 +1093,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 506.4
     width: 1212.6
     height: 277
+=======
+    y: 501.6
+    width: 1212.6
+    height: 273.8
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -922,7 +1109,11 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_LastSelectedObjectID: 26222
+=======
+  m_LastSelectedObjectID: 28120
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -941,7 +1132,11 @@ MonoBehaviour:
     x: 1213.6
     y: 0
     width: 322.40002
+<<<<<<< HEAD
     height: 730.8
+=======
+    height: 722.8
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
@@ -973,7 +1168,11 @@ MonoBehaviour:
     x: 1213.6
     y: 73.6
     width: 321.40002
+<<<<<<< HEAD
     height: 709.8
+=======
+    height: 701.8
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -985,7 +1184,11 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: 26222
+=======
+  m_LastInspectedObjectInstanceID: -1
+>>>>>>> parent of e6baa91 (Fixed scanning?? And reduced mouse)
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

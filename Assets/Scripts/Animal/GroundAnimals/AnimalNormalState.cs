@@ -1,7 +1,16 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AnimalNormalState : AnimalBaseState
 {
+    enum AIWandering
+    {
+        Idle, 
+        Wandering
+    }
+
+    private float waitTimer = 0f;
+
     public override void EnterState(AnimalStateManager animal)
     {
 

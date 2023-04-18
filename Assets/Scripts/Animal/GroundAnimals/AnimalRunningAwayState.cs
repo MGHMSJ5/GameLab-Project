@@ -9,16 +9,15 @@ public class AnimalRunningAwayState : AnimalBaseState
     float currentTime;
     public override void EnterState(AnimalStateManager animal)
     {
-        animal.agent.speed = animal.runningSpeed;
+
     }
 
     public override void UpdateState(AnimalStateManager animal)
     {
-        Debug.Log("Running State");
         animal.normDir = Quaternion.AngleAxis(randomInt, Vector3.up) * animal.normDir;
         MoveToPos(animal.transform.position - (animal.normDir * animal.distWhenStartRunning), animal);
 
-        if (Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.detectDistance || animal.playerMovement.isCrouching)
+        if (Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.detectDistance || animal.PlayerMovement.isCrouching)
         {
             animal.SwitchState(animal.NormalState);
         }

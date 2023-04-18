@@ -19,7 +19,6 @@ public class AnimalNormalState : AnimalBaseState
 
     public override void UpdateState(AnimalStateManager animal)
     {
-        Debug.Log("Normal State");
         switch (curState)
         {
             case WanderingStates.Idle:

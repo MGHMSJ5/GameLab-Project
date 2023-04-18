@@ -27,8 +27,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            mainObject.SetActive(false);
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            Destroy(mainObject);
+
         }
     }
 

@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode crouchButton; //this will be the button that will make the player crouch
     public float cameraDown = 1f; //how much the camera will go down
     public float crouchingSpeed = 5f; //the speed of the player when crouching
+    public bool isCrouching = false;
 
 
     private void Awake()
@@ -83,12 +84,14 @@ public class PlayerMovement : MonoBehaviour
         //crouching
         if (Input.GetKeyDown(crouchButton)) //if the crouching button is pressed
         {
+            isCrouching = true;
             speed = crouchingSpeed; //set the speed slower (crouching speed)
             playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, -cameraDown, 0); //change the camera position (down) depending on what posisiton it is
         }
 
         if (Input.GetKeyUp(crouchButton)) //if the crouching button is released
         {
+            isCrouching = false;
             speed = originalSpeed; //set the speed back to normal
             playerCameraObj.transform.position = playerCameraObj.transform.position + new Vector3(0, cameraDown, 0); //set the camera back up
         }

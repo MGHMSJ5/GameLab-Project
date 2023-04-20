@@ -26,7 +26,8 @@ public class NotebookPages : MonoBehaviour
                 journalObj.SetActive(true);
                 notebookPages.SetActive(true);
                 scanDoneUI.SetActive(false); //remove the check from screen. this check appears after done scanning. And will stay there if notebook is activated without this line of code
-                Cursor.lockState = CursorLockMode.Confined;
+                //Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
                 Time.timeScale = 0f;
 
             }
@@ -36,7 +37,8 @@ public class NotebookPages : MonoBehaviour
                 journalObj.SetActive(false);
                 notebookPages.SetActive(false);
                 Time.timeScale = 1f;
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
 
             if (!isActive && Input.GetKeyUp(getJournal))

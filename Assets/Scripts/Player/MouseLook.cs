@@ -46,6 +46,8 @@ public class MouseLook : MonoBehaviour
     public string numberOfNotifications;
     public TextMeshProUGUI notificationNumberUI;
 
+    public bool canLookAround = true;
+    public DialogueManager dialogueManager;
 
     private void Awake()
     {
@@ -62,15 +64,18 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //get the x and y location of the mouse:
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime; //use Time.deltaTime here to make sure that the rotation is independent of the current frame rate
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (canLookAround)
+        {
+            //get the x and y location of the mouse:
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime; //use Time.deltaTime here to make sure that the rotation is independent of the current frame rate
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY; //decrease the rotion depending on the mouse. Not increasing, because then the rotation is flipped
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); //make sure that they player can't rotate too far. Clamp is a way to restrict a number between two other numbers.
+            xRotation -= mouseY; //decrease the rotion depending on the mouse. Not increasing, because then the rotation is flipped
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f); //make sure that they player can't rotate too far. Clamp is a way to restrict a number between two other numbers.
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f); //apply the rotation, Quaternion is responsible for rotation. This is also used so that line 24 can happen
-        playerBody.Rotate(Vector3.up * mouseX); //rotate the player body based on the mouse movement (horizontal movement)
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f); //apply the rotation, Quaternion is responsible for rotation. This is also used so that line 24 can happen
+            playerBody.Rotate(Vector3.up * mouseX); //rotate the player body based on the mouse movement (horizontal movement)
+        }
 
         //zoom
         if (canZoom) //if the player can zoom in
@@ -93,7 +98,7 @@ public class MouseLook : MonoBehaviour
                 {
                     notebookPages.canOpenJournal = false;
                 }
-                else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
+                else if (defaultPOV == cameraOptions.fieldOfView && !dialogueManager.dialogueIsPlaying) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
                 {
                     notebookPages.canOpenJournal = true;
                 }

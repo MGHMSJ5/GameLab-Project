@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
-    public PlayerMovement playerMovement;
+    //public PlayerMovement playerMovement;
+    //public MouseLook mouseLook;
 
     private void Awake()
     {
@@ -59,7 +61,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Mouse0))
         {
             ContinueStory();
         }
@@ -70,7 +72,10 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        Cursor.visible = true;
+        
         //playerMovement.enabled = false;
+        //mouseLook.enabled = false;
 
         ContinueStory();
     }
@@ -80,7 +85,10 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        Cursor.visible = false;
+
         //playerMovement.enabled = true;
+        //mouseLook.enabled = true;
     }
 
     private void ContinueStory()
@@ -121,10 +129,20 @@ public class DialogueManager : MonoBehaviour
         {
             choices[i].gameObject.SetActive(false);
         }
+
+        //StartCoroutine(SelectFirstChoice());
     }
+
+    //private IEnumerator SelectFirstChoice()
+    //{
+    //    EventSystem.current.SetSelectedGameObject(null);
+    //    yield return new WaitForEndOfFrame();
+    //    EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+    //}
 
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }

@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI; //reference to the Pause Menu panel as a GameObject
     public GameObject optionsMenu;
     public KeyCode pauseButton; //the key that can be manually changed in the inspector to pause and un-pause the game
+    public bool canPauseGame = true;
 
     private void Start()
     {
@@ -19,17 +20,21 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(pauseButton)) //if the key is pressed
+        if (canPauseGame)
         {
-            if (gameIsPaused) //if the game is paused (GameIsPaused = true)
+            if (Input.GetKeyDown(pauseButton)) //if the key is pressed
             {
-                Resume(); //reference to method (un-pause the game, deactivate the UI panel, set GameIsPaused to false)
-            }
-            else //if GameIsPaused is false. 
-            {
-                Pause(); //reference to method (pause the game, activate the UI panel, set GameIsPaused to true)
+                if (gameIsPaused) //if the game is paused (GameIsPaused = true)
+                {
+                    Resume(); //reference to method (un-pause the game, deactivate the UI panel, set GameIsPaused to false)
+                }
+                else //if GameIsPaused is false. 
+                {
+                    Pause(); //reference to method (pause the game, activate the UI panel, set GameIsPaused to true)
+                }
             }
         }
+
     }
 
     public void Resume() //this is made public to make it able to be used in buttons

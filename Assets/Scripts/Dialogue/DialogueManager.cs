@@ -21,8 +21,10 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
-    //public PlayerMovement playerMovement;
-    //public MouseLook mouseLook;
+    public PlayerMovement playerMovement;
+    public MouseLook mouseLook;
+    public NotebookPages notebookPages;
+    public PauseMenu pauseMenu;
 
     private void Awake()
     {
@@ -73,9 +75,12 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         Cursor.visible = true;
-        
-        //playerMovement.enabled = false;
-        //mouseLook.enabled = false;
+
+        playerMovement.enabled = false;
+        mouseLook.canLookAround = false;
+        mouseLook.canZoom = false;
+        notebookPages.canOpenJournal = false;
+        pauseMenu.canPauseGame = false;
 
         ContinueStory();
     }
@@ -87,8 +92,10 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         Cursor.visible = false;
 
-        //playerMovement.enabled = true;
-        //mouseLook.enabled = true;
+        playerMovement.enabled = true;
+        mouseLook.canLookAround = true;
+        mouseLook.canZoom = true;
+        notebookPages.canOpenJournal = true;
     }
 
     private void ContinueStory()

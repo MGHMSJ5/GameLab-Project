@@ -23,7 +23,9 @@ public class DialogueManager : MonoBehaviour
 
     public PlayerMovement playerMovement;
     public MouseLook mouseLook;
+    private bool hasBinoculars = false;
     public NotebookPages notebookPages;
+    private bool hasJournal = false;
     public PauseMenu pauseMenu;
 
     private void Awake()
@@ -78,9 +80,18 @@ public class DialogueManager : MonoBehaviour
 
         playerMovement.enabled = false;
         mouseLook.canLookAround = false;
-        mouseLook.canZoom = false;
-        notebookPages.canOpenJournal = false;
         pauseMenu.canPauseGame = false;
+
+        if (mouseLook.canZoom)
+        {
+            hasBinoculars = true;
+            mouseLook.canZoom = false;
+        }
+        if (notebookPages.canOpenJournal)
+        {
+            hasJournal = true;
+            notebookPages.canOpenJournal = false;
+        }
 
         ContinueStory();
     }
@@ -94,8 +105,17 @@ public class DialogueManager : MonoBehaviour
 
         playerMovement.enabled = true;
         mouseLook.canLookAround = true;
-        mouseLook.canZoom = true;
-        notebookPages.canOpenJournal = true;
+        pauseMenu.canPauseGame = true;
+
+        if (hasBinoculars)
+        {
+            mouseLook.canZoom = true;
+        }
+
+        if (hasJournal)
+        {
+            notebookPages.canOpenJournal = true;
+        }
     }
 
     private void ContinueStory()

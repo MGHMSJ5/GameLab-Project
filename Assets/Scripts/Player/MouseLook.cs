@@ -49,6 +49,12 @@ public class MouseLook : MonoBehaviour
     public bool canLookAround = true;
     public DialogueManager dialogueManager;
 
+    [Header("Pruner")]
+    public KeyCode prunerKey;
+    public float pruningDistance;
+    public bool canPrune = false;
+    public GameObject pruneUI;
+
     private void Awake()
     {
         scanSlider.maxValue = scanTime;
@@ -159,6 +165,23 @@ public class MouseLook : MonoBehaviour
         else
         {
             buttonUI.SetActive(false);
+        }
+
+        //pruning
+        if (Physics.Raycast(landingRay, out hit, pruningDistance))
+        {
+            if (hit.collider.tag == "Pruned" && canPrune)
+            {
+                pruneUI.SetActive(true);
+                if (Input.GetKeyDown(prunerKey))
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+            if (hit.collider.tag != "Pruned")
+            {
+                pruneUI.SetActive(false);
+            }
         }
     }
     private void HandleZoom()

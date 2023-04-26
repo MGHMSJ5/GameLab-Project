@@ -45,7 +45,6 @@ public class AnimalNormalState : AnimalBaseState
 
     private void DoIdle(AnimalStateManager animal)
     {
-        Debug.Log("Idle");
         if (waitTimer > 0)
         {
             waitTimer -= Time.deltaTime;
@@ -58,7 +57,6 @@ public class AnimalNormalState : AnimalBaseState
 
     private void DoWander(AnimalStateManager animal)
     {
-        Debug.Log("Wander");
         if (animal.agent.pathStatus != NavMeshPathStatus.PathComplete)
             return;
 

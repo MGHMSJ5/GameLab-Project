@@ -14,7 +14,6 @@ public class AnimalRunningAwayState : AnimalBaseState
 
     public override void UpdateState(AnimalStateManager animal)
     {
-        Debug.Log("Running State");
         animal.normDir = Quaternion.AngleAxis(randomInt, Vector3.up) * animal.normDir;
         MoveToPos(animal.transform.position - (animal.normDir * animal.distWhenStartRunning), animal);
 

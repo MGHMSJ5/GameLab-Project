@@ -14,6 +14,7 @@ TagManager:
   - Door
   - Red Deer
   - Roe Deer
+  - Pruned
   layers:
   - Default
   - TransparentFX

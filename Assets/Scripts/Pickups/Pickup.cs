@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour
     public GameObject binocularUI;
     public GameObject journalGO;
     public GameObject journalUI;
+    public GameObject prunerGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,16 @@ public class Pickup : MonoBehaviour
                 journalGO = null;
             }
         }
+
+        if (prunerGO != null)
+        {
+            if (!prunerGO.activeInHierarchy)
+            {
+                ActivatePruner();
+                Destroy(prunerGO);
+                prunerGO = null;
+            }
+        }
     }
 
     void ActivateZooming()
@@ -50,5 +61,10 @@ public class Pickup : MonoBehaviour
     {
         mouseLook.hasPickedUp = true;
         journalUI.SetActive(true);
+    }
+
+    void ActivatePruner()
+    {
+        mouseLook.canPrune = true;
     }
 }

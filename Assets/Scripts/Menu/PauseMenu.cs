@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public bool gameIsPaused = false; //a varialbe that'll be used to check if the game if paused or not
     public GameObject pauseMenuUI; //reference to the Pause Menu panel as a GameObject
     public GameObject optionsMenu;
+    public GameObject journal3D;
+    public GameObject crossHair;
     public KeyCode pauseButton; //the key that can be manually changed in the inspector to pause and un-pause the game
     public bool canPauseGame = true;
 
@@ -41,6 +43,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false); //deactivate the Pause Menu panel
         optionsMenu.SetActive(false); //deactivate the options menu (if the player exited the menu while having the options open
+        journal3D.SetActive(false);
+        crossHair.SetActive(true);
         Time.timeScale = 1f; //set the time speed to normal
         Cursor.visible = false;
         gameIsPaused = false; //the game is not paused anymore. So, the 'variable GameIsPaused' is false
@@ -49,6 +53,8 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true); //activate the Pause Menu panel
+        journal3D.SetActive(true);
+        crossHair.SetActive(false);
         Time.timeScale = 0f; //freeze the game. timeScale is the speed at which time is passing
         gameIsPaused = true; //the game is paused. So, the variable 'GameIsPaused' is true
         Cursor.visible = true;

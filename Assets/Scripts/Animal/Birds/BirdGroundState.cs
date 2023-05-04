@@ -60,7 +60,7 @@ public class BirdGroundState : BirdBaseState
         if (bird.agent.pathStatus != NavMeshPathStatus.PathComplete)
             return;
 
-        waitTimer = Random.Range(1.0f, 4.0f);
+        waitTimer = Random.Range(2.0f, 9.0f);
         curState = WanderingStates.Idle;
 
     }

@@ -12,6 +12,9 @@ public class BirdPerchState : BirdBaseState
         perchDetect = bird.birdPerches[bird.perchListNum].GetComponent<PerchDetect>();
         listLenght = bird.birdPerches.Count;
         curretPerch = bird.perchListNum; //is used to make sure that the bird won't go to the same perch when it flies to another place
+        Vector3 zRotation = bird.transform.eulerAngles;
+        zRotation.x = 0f;
+        bird.transform.eulerAngles = zRotation;
     }
 
     public override void UpdateState(BirdStateManager bird)

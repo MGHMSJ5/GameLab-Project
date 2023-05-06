@@ -15,10 +15,14 @@ public class BirdGroundState : BirdBaseState
     {
         bird.agent.enabled = true;
         bird.agent.speed = bird.walkingSpeed;
+
+        bird.randomNumber = Random.Range(20, 40);
     }
 
     public override void UpdateState(BirdStateManager bird)
     {
+        bird.timerToSwitchState = Time.deltaTime;
+
         switch (curState)
         {
             case WanderingStates.Idle:
@@ -35,6 +39,13 @@ public class BirdGroundState : BirdBaseState
         if (Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.detectDistance && !bird.playerMovement.isCrouching)
         {
             bird.SwitchState(bird.FlyingState);
+        }
+
+        if (bird.randomNumber < bird.timerToSwitchState)
+        {
+            bird.SwitchState(bird.FlyingState);
+            bird.timerToSwitchState = 0;
+            bird.randomNumber = Random.Range(20, 40);
         }
     }
 

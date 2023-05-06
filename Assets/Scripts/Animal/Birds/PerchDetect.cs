@@ -6,6 +6,7 @@ public class PerchDetect : MonoBehaviour
 {
     public bool isPlayerNear = false;
     public bool isItGround; //set to true in inspecto if this perch is on the ground
+    public bool perchIsUsed = false;
 
     private void OnTriggerEnter(Collider other)
     {

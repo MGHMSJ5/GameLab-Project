@@ -25,14 +25,18 @@ public class BirdStateManager : MonoBehaviour
     public LayerMask floorMask = 0;
 
     public float walkingSpeed;
+
+    public float timerToSwitchState = 0;
+    public int randomNumber;
+
     // Start is called before the first frame update
     void Start()
     {
         playerMovement = chaser.GetComponent<PlayerMovement>();
 
-        currentState = GroundState;
+            currentState = FlyingState;
 
-        currentState.EnterState(this);
+            currentState.EnterState(this);
 
         if (agent == null)
         {

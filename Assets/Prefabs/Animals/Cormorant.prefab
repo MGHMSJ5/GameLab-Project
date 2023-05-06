@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6363451697625234451}
   - component: {fileID: 9199572916350355673}
   - component: {fileID: 3330336622223185850}
+  - component: {fileID: 2187948874047795584}
+  - component: {fileID: 6087187649459818768}
   m_Layer: 0
   m_Name: Cormorant
   m_TagString: Cormorant
@@ -100,3 +102,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7096198, y: 0.89792216, z: 0.860945}
   m_Center: {x: 0, y: 0.45838767, z: -0.17462371}
+--- !u!195 &2187948874047795584
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7254048456664262924}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.8548099
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.8146975
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &6087187649459818768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7254048456664262924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84083b1ea898d64a810b2c4bb94aff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdPerches: []
+  perchListNum: 0
+  flyingSpeed: 5
+  agent: {fileID: 2187948874047795584}
+  chaser: {fileID: 0}
+  distanceWhenStartFlying: 7
+  playerMovement: {fileID: 0}
+  normDir: {x: 0, y: 0, z: 0}
+  detectDistance: 6
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 1
+  walkingSpeed: 5

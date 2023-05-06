@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class BirdFlyingState : BirdBaseState
 {
+    PerchDetect perchDetect;
     public override void EnterState(BirdStateManager bird)
     {
         bird.agent.enabled = false;
@@ -10,6 +11,19 @@ public class BirdFlyingState : BirdBaseState
 
     public override void UpdateState(BirdStateManager bird)
     {
+        perchDetect = bird.birdPerches[bird.perchListNum].GetComponent<PerchDetect>();
+        if (perchDetect.perchIsUsed)
+        {
+            for (int i = 0; i < bird.birdPerches.Count; i++)
+            {
+                PerchDetect perchDetectInList = bird.birdPerches[i].GetComponent<PerchDetect>();
+                if (perchDetectInList.perchIsUsed == false)
+                {
+                    bird.perchListNum = i;
+                    return;
+                }
+            }
+        }
         Vector3 direction = (bird.birdPerches[bird.perchListNum].transform.position - bird.transform.position).normalized;
         Vector3 velocity = direction * bird.flyingSpeed;
         bird.transform.position += velocity * Time.deltaTime;

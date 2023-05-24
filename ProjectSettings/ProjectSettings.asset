@@ -871,11 +871,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 3da09f19-5b62-4f6e-b3f4-3ff53b3bd166
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: GameLab
+  organizationId: mg_hm_sj5
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

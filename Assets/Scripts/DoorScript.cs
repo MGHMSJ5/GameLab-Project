@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Services.Core;
+using Unity.Services.Analytics;
+
 
 public class DoorScript : MonoBehaviour
 {
@@ -12,6 +15,19 @@ public class DoorScript : MonoBehaviour
     private Animator anim;
 
     public GameObject pickUpIcon;
+
+    async void Start()
+    {
+        try
+        {
+            await UnityServices.InitializeAsync();
+            List<string> consentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
+        }
+        catch (ConsentCheckException e)
+        {
+            // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,6 +44,12 @@ public class DoorScript : MonoBehaviour
                     anim = doorhit.transform.GetComponentInParent<Animator>();
                     anim.SetBool("Opened", !opened);
                     opened = !opened;
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>()
+                    {
+                        { "doorOpened", true},
+                    };
+                    AnalyticsService.Instance.CustomData("DoorInteraction", parameters);
                 }
             }
             if (doorhit.collider.tag != "Door")

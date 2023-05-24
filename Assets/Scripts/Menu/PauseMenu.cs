@@ -15,6 +15,8 @@ public class PauseMenu : MonoBehaviour
     public KeyCode pauseButton; //the key that can be manually changed in the inspector to pause and un-pause the game
     public bool canPauseGame = true;
 
+    public GameObject journal3DMaker; //the camera and real 3d model journal
+
     private void Start()
     {
         Cursor.visible = false;
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f; //set the time speed to normal
         Cursor.visible = false;
         gameIsPaused = false; //the game is not paused anymore. So, the 'variable GameIsPaused' is false
+        journal3DMaker.SetActive(false);
     }
 
     void Pause()
@@ -58,6 +61,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f; //freeze the game. timeScale is the speed at which time is passing
         gameIsPaused = true; //the game is paused. So, the variable 'GameIsPaused' is true
         Cursor.visible = true;
+        journal3DMaker.SetActive(true);
     }
 
     public void ExitGame() // a function that'll be calld whenever the 'Exit' button is pressed

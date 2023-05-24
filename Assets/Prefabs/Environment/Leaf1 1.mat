@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Leaf
+  m_Name: Leaf1 1
   m_Shader: {fileID: -6465566751694194690, guid: 0977582b5a1ed1340b1b5690fdfda383,
     type: 3}
   m_ValidKeywords: []

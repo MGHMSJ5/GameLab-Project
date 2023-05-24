@@ -24,6 +24,9 @@ public class MouseLook : MonoBehaviour
     private Coroutine zoomRoutine;
     public GameObject journal;
     NotebookPages notebookPages;
+    public int zoomSensitivity = 1;
+
+    private bool isZooming = false;
 
     [Header("Scanning")]
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
@@ -89,14 +92,14 @@ public class MouseLook : MonoBehaviour
             HandleZoom(); //run this
         }
 
-            if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
-            {
-                binocularVision.SetActive(true); //active this so that the player has the bonocular vision
-            }
-            else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
-            {
-                binocularVision.SetActive(false); //deactivate the binocular vision
-            }
+           // if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
+            //{
+            //    binocularVision.SetActive(true); //active this so that the player has the bonocular vision
+            //}
+            //else if (defaultPOV == cameraOptions.fieldOfView) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
+           // {
+            //    binocularVision.SetActive(false); //deactivate the binocular vision
+            //}
 
             if (hasPickedUp)
             {
@@ -117,7 +120,7 @@ public class MouseLook : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * pickupDistance); //line that will be drawn in the scene to see the raycast
 
-        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView == zoomPOV && hasPickedUp) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
+        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView != defaultPOV &&hasPickedUp) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
             for (int i = 0; i < InformationBlocks.Count; i++)
             {
@@ -188,26 +191,65 @@ public class MouseLook : MonoBehaviour
     {
         if (Input.GetKeyDown(zoomButton)) //if zoom button is pressed
         {
-            if (zoomRoutine != null) //check if the player is mid zoom
+            if (isZooming)
             {
-                StopCoroutine(zoomRoutine); //stop this
-                zoomRoutine = null; //set to null
+                StartCoroutine(QuitZooming());
+            }else
+            {
+                StartZooming();
             }
+            
+            //if (zoomRoutine != null) //check if the player is mid zoom
+            //{
+            //    StopCoroutine(zoomRoutine); //stop this
+            //    zoomRoutine = null; //set to null
+            //}
 
-            zoomRoutine = StartCoroutine(ToggleZoom(true)); //start this with true parameter (enter the zoom state)
+            //zoomRoutine = StartCoroutine(ToggleZoom(true)); //start this with true parameter (enter the zoom state)
         }
 
-        if (Input.GetKeyUp(zoomButton)) //if zoom button is releaed
+       // if (Input.GetKeyUp(zoomButton)) //if zoom button is releaed
+        //{
+            //if (zoomRoutine != null)
+            //{
+            //    StopCoroutine(zoomRoutine);
+            //    zoomRoutine = null;
+            //}
+            //zoomRoutine = StartCoroutine(ToggleZoom(false)); //start this with false parameter (enter the zoom state)
+        //}
+        if (isZooming)
         {
-            if (zoomRoutine != null)
-            {
-                StopCoroutine(zoomRoutine);
-                zoomRoutine = null;
-            }
+            float scrollData = Input.mouseScrollDelta.y * -2;
+            float _POVChange = scrollData * zoomSensitivity;
+            float newPOV = cameraOptions.fieldOfView + _POVChange;
 
-            zoomRoutine = StartCoroutine(ToggleZoom(false)); //start this with false parameter (enter the zoom state)
+            newPOV = Mathf.Clamp(newPOV, zoomPOV, defaultPOV);
+
+            cameraOptions.fieldOfView = newPOV;
         }
     }
+    private IEnumerator QuitZooming()
+    {
+        binocularVision.SetActive(false); //active this so that the player has the bonocular vision
+        float startingPOV = cameraOptions.fieldOfView;
+        float timeElapsed = 0;
+
+        while (timeElapsed < timeToZoom)
+        {
+            cameraOptions.fieldOfView = Mathf.Lerp(startingPOV, defaultPOV, timeElapsed / timeToZoom);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        cameraOptions.fieldOfView = defaultPOV;
+        isZooming = false;
+    }
+
+    private void StartZooming()
+    {
+        binocularVision.SetActive(true); //active this so that the player has the bonocular vision
+        isZooming = true;
+    }
+
     private IEnumerator ToggleZoom(bool isEnter)
     {
         float targetPOV = isEnter ? zoomPOV : defaultPOV; //set target to zoomPOV if parameter is true (it will zooming in), set target to defaultPOV if parameter is false (it will zoom out)

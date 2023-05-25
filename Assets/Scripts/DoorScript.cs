@@ -47,9 +47,11 @@ public class DoorScript : MonoBehaviour
 
                     Dictionary<string, object> parameters = new Dictionary<string, object>()
                     {
-                        { "doorOpened", true},
+                        { "doorIsOpen", true},
                     };
-                    AnalyticsService.Instance.CustomData("DoorInteraction", parameters);
+                    AnalyticsService.Instance.CustomData("doorInteractable", parameters);
+
+                    Debug.Log("doorOpened");
                 }
             }
             if (doorhit.collider.tag != "Door")

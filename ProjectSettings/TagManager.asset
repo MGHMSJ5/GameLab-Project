@@ -15,6 +15,7 @@ TagManager:
   - Red Deer
   - Roe Deer
   - Pruned
+  - NPC
   layers:
   - Default
   - TransparentFX

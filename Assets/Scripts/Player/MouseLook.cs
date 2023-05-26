@@ -58,6 +58,12 @@ public class MouseLook : MonoBehaviour
     public bool canPrune = false;
     public GameObject pruneUI;
 
+    [Header("Long distance NPC")]
+    public float talkDistance;
+    private bool wasHit;
+    [SerializeField]
+    NPCDialogueTrigger npcScript = new NPCDialogueTrigger();
+
     private void Awake()
     {
         scanSlider.maxValue = scanTime;
@@ -118,7 +124,7 @@ public class MouseLook : MonoBehaviour
         RaycastHit hit; //is storing everything that gets hit by the ray
         Ray landingRay = new Ray(transform.position, transform.forward); //the direction of the ray. transform.forward is used to point the ray in the direction the camera is facing (since the player will be able to scan from the camera's view)
 
-        Debug.DrawRay(transform.position, transform.forward * pickupDistance); //line that will be drawn in the scene to see the raycast
+        //Debug.DrawRay(transform.position, transform.forward * pickupDistance); //line that will be drawn in the scene to see the raycast
 
         if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView != defaultPOV &&hasPickedUp) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
@@ -186,6 +192,25 @@ public class MouseLook : MonoBehaviour
                 pruneUI.SetActive(false);
             }
         }
+
+        //long distance NPC
+        if (Physics.Raycast(landingRay, out hit, talkDistance, ~ ignoreBorders))
+        {
+            if (hit.collider.tag == "NPC")
+            {
+                npcScript = hit.collider.gameObject.GetComponent<NPCDialogueTrigger>();
+                npcScript.raycastHit = true;
+                wasHit = true;
+            }
+        }
+        else if(wasHit)
+        {
+            npcScript.talkUI.SetActive(false);
+            npcScript.raycastHit = false;
+            wasHit = false;
+            npcScript = null;
+        }
+        Debug.DrawRay(transform.position, transform.forward * talkDistance);
     }
     private void HandleZoom()
     {

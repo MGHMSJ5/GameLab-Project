@@ -10,18 +10,20 @@ public class NotebookPages : MonoBehaviour
 
     public GameObject notebookPages;
     public GameObject journalObj;
-    bool isActive = false;
+    public bool isActive = false;
     public KeyCode getJournal;
 
     public bool canOpenJournal;
 
     public GameObject scanDoneUI;
 
+    public MouseLook mouseLook;
+
     void Update()
     {
         if (canOpenJournal)
         {
-            if (!isActive && Input.GetKeyDown(getJournal))
+            if (!isActive && Input.GetKeyDown(getJournal) && !mouseLook.isZooming)
             {
                 journalObj.SetActive(true);
                 notebookPages.SetActive(true);
@@ -29,7 +31,7 @@ public class NotebookPages : MonoBehaviour
                 //Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
                 Time.timeScale = 0f;
-
+                mouseLook.canZoom = false;
             }
 
             if (isActive && Input.GetKeyDown(getJournal))
@@ -39,6 +41,7 @@ public class NotebookPages : MonoBehaviour
                 Time.timeScale = 1f;
                 //Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                mouseLook.canZoom = true;
             }
 
             if (!isActive && Input.GetKeyUp(getJournal))
@@ -62,7 +65,7 @@ public class NotebookPages : MonoBehaviour
     public void ToPlants()
     {
         Pages[currentPage].SetActive(false);
-        Pages[3].SetActive(true);
+        Pages[5].SetActive(true);
         currentPage = 5;
     }
 

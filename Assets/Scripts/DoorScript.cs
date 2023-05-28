@@ -42,6 +42,7 @@ public class DoorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     anim = doorhit.transform.GetComponentInParent<Animator>();
+                    opened = anim.GetBool("Opened");
                     anim.SetBool("Opened", !opened);
                     opened = !opened;
 
@@ -51,7 +52,6 @@ public class DoorScript : MonoBehaviour
                     };
                     AnalyticsService.Instance.CustomData("doorInteractable", parameters);
 
-                    Debug.Log("doorOpened");
                 }
             }
             if (doorhit.collider.tag != "Door")

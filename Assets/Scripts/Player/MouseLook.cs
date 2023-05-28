@@ -26,7 +26,7 @@ public class MouseLook : MonoBehaviour
     NotebookPages notebookPages;
     public int zoomSensitivity = 1;
 
-    private bool isZooming = false;
+    public bool isZooming = false;
 
     [Header("Scanning")]
     public float scanningDistance; //this will be dinstance the player is able to 'scan' an animal or plant
@@ -36,7 +36,7 @@ public class MouseLook : MonoBehaviour
     public List<GameObject> InformationBlocks = new List<GameObject>(); //list with all of the parent GameObjects of the information about the endangered animals and plants. 
     public Slider scanSlider;
     public GameObject scanDone;
-    public LayerMask ignoreBorders;
+    public LayerMask ignoreBordersScan;
     public bool hasPickedUp;
     public GameObject notificationUI;
 
@@ -63,6 +63,7 @@ public class MouseLook : MonoBehaviour
     private bool wasHit;
     [SerializeField]
     NPCDialogueTrigger npcScript = new NPCDialogueTrigger();
+    public LayerMask ignoreBorders;
 
     private void Awake()
     {
@@ -126,7 +127,7 @@ public class MouseLook : MonoBehaviour
 
         //Debug.DrawRay(transform.position, transform.forward * pickupDistance); //line that will be drawn in the scene to see the raycast
 
-        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBorders) && cameraOptions.fieldOfView != defaultPOV &&hasPickedUp) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
+        if (Physics.Raycast(landingRay, out hit, scanningDistance,~ ignoreBordersScan) && cameraOptions.fieldOfView != defaultPOV &&hasPickedUp) //if the raycast (the ray is in the direction of the camera, hit is what it will store, scanningdistance is the length of the ray), and if the player is not zooming in/out
         {
             for (int i = 0; i < InformationBlocks.Count; i++)
             {
@@ -191,6 +192,10 @@ public class MouseLook : MonoBehaviour
             {
                 pruneUI.SetActive(false);
             }
+        }
+        else
+        {
+            pruneUI.SetActive(false);
         }
 
         //long distance NPC

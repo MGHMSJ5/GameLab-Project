@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour
     public GameObject journalGO;
     public GameObject journalUI;
     public GameObject prunerGO;
+    public GameObject keyGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,15 @@ public class Pickup : MonoBehaviour
                 ActivatePruner();
                 Destroy(prunerGO);
                 prunerGO = null;
+            }
+        }
+
+        if (keyGO != null)
+        {
+            if (!keyGO.activeInHierarchy)
+            {
+                Destroy(keyGO);
+                keyGO = null;
             }
         }
     }

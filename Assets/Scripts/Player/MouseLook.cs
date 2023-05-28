@@ -62,7 +62,7 @@ public class MouseLook : MonoBehaviour
     public float talkDistance;
     private bool wasHit;
     [SerializeField]
-    NPCDialogueTrigger npcScript = new NPCDialogueTrigger();
+    NPCDialogueTrigger npcScript;
     public LayerMask ignoreBorders;
 
     private void Awake()

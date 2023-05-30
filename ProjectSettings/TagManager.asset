@@ -18,6 +18,7 @@ TagManager:
   - NPC
   - Fallow Deer
   - Cornus suecica
+  - Stratiotes aloides
   layers:
   - Default
   - TransparentFX

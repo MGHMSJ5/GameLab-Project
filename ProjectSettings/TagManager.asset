@@ -17,6 +17,7 @@ TagManager:
   - Pruned
   - NPC
   - Fallow Deer
+  - Cornus suecica
   layers:
   - Default
   - TransparentFX

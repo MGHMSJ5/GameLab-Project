@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NotebookPages : MonoBehaviour
 {
-    int currentPage = 0;
+    public int currentPage = 0;
+    private string pageString;
+    public TextMeshProUGUI pageNumberUI;
 
     public List<GameObject> Pages = new List<GameObject>();
 
@@ -21,6 +24,7 @@ public class NotebookPages : MonoBehaviour
 
     void Update()
     {
+        pageNumberUI.text = (currentPage + 1).ToString();
         if (canOpenJournal)
         {
             if (!isActive && Input.GetKeyDown(getJournal) && !mouseLook.isZooming)

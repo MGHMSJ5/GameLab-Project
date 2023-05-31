@@ -219,6 +219,10 @@ public class MouseLook : MonoBehaviour
     }
     private void HandleZoom()
     {
+        if (isZooming && Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(QuitZooming());
+        }
         if (Input.GetKeyDown(zoomButton)) //if zoom button is pressed
         {
             if (isZooming)

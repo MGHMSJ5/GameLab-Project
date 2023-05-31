@@ -38,7 +38,7 @@ public class NotebookPages : MonoBehaviour
                 mouseLook.canZoom = false;
             }
 
-            if (isActive && Input.GetKeyDown(getJournal))
+            if (isActive && Input.GetKeyDown(getJournal) || isActive && Input.GetKeyDown(KeyCode.Escape))
             {
                 journalObj.SetActive(false);
                 notebookPages.SetActive(false);
@@ -53,7 +53,7 @@ public class NotebookPages : MonoBehaviour
                 isActive = true;
             }
 
-            if (isActive && Input.GetKeyUp(getJournal))
+            if (isActive && Input.GetKeyUp(getJournal) || isActive && Input.GetKeyDown(KeyCode.Escape))
             {
                 StartCoroutine(WaitToSetFalse());
             }

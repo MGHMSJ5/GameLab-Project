@@ -65,7 +65,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         
-        if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Mouse0))
+        if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Mouse0) || currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Space))
         {
             ContinueStory();
         }

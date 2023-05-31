@@ -208,7 +208,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74500742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0efabaf52f392634b9f926458ec21c41, type: 3}
   m_Name: 
@@ -217,6 +217,8 @@ MonoBehaviour:
   on: {fileID: 74500744}
   off2: {fileID: 1133943643, guid: bf3d8346288327a468cdb2b2c642f937, type: 3}
   on2: {fileID: 48057226, guid: bf3d8346288327a468cdb2b2c642f937, type: 3}
+  FLeft: 0
+  FRight: 0
 --- !u!114 &74500747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,9 +263,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 465227421}
+      - m_Target: {fileID: 641283370}
         m_TargetAssemblyTypeName: ChangeImageFullscreen, Assembly-CSharp
         m_MethodName: FullscreenCheckRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 641283371}
+        m_TargetAssemblyTypeName: Fullscreen, Assembly-CSharp
+        m_MethodName: FullscreenON
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -991,7 +1005,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465227417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0efabaf52f392634b9f926458ec21c41, type: 3}
   m_Name: 
@@ -1000,6 +1014,8 @@ MonoBehaviour:
   on: {fileID: 74500744}
   off2: {fileID: 1133943643, guid: bf3d8346288327a468cdb2b2c642f937, type: 3}
   on2: {fileID: 48057226, guid: bf3d8346288327a468cdb2b2c642f937, type: 3}
+  FLeft: 0
+  FRight: 0
 --- !u!114 &465227422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,9 +1060,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 74500746}
+      - m_Target: {fileID: 641283370}
         m_TargetAssemblyTypeName: ChangeImageFullscreen, Assembly-CSharp
         m_MethodName: FullscreenCheckLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 641283371}
+        m_TargetAssemblyTypeName: Fullscreen, Assembly-CSharp
+        m_MethodName: FulscreenOFF
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1382,6 +1410,9 @@ GameObject:
   - component: {fileID: 641283366}
   - component: {fileID: 641283365}
   - component: {fileID: 641283369}
+  - component: {fileID: 641283372}
+  - component: {fileID: 641283371}
+  - component: {fileID: 641283370}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1483,6 +1514,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 053e91ee1d292534ebbf869431a9b654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &641283370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641283364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efabaf52f392634b9f926458ec21c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  off: {fileID: 465227419}
+  on: {fileID: 74500744}
+  off2: {fileID: 1133943643, guid: bf3d8346288327a468cdb2b2c642f937, type: 3}
+  on2: {fileID: 48057226, guid: bf3d8346288327a468cdb2b2c642f937, type: 3}
+  FLeft: 0
+  FRight: 0
+--- !u!114 &641283371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641283364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9931cac3c40080042a87d402f0e4e9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeImageFullscreen: {fileID: 641283370}
+--- !u!114 &641283372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641283364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61593ac664d38f9418919565acca61a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &793682107
@@ -1626,6 +1700,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1084523387}
         m_TargetAssemblyTypeName: ChangeImageSound, Assembly-CSharp
         m_MethodName: SoundCheckLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 641283372}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SoundOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2197,6 +2283,18 @@ MonoBehaviour:
       - m_Target: {fileID: 793682111}
         m_TargetAssemblyTypeName: ChangeImageSound, Assembly-CSharp
         m_MethodName: SoundCheckRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 641283372}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: SoundOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

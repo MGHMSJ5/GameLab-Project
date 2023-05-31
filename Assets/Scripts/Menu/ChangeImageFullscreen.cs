@@ -12,10 +12,13 @@ public class ChangeImageFullscreen : MonoBehaviour
 	public Sprite on2; //image of the checked box
 
     public static bool FLeftChecking = false; //bool for the left box
-	public static bool FRightChecking = false; //bool for the right box
-	//static is there so that the variable also works in other scenes
+	public static bool FRightChecking = true; //bool for the right box
+											   //static is there so that the variable also works in other scenes
 
-	public void FullscreenCheckLeft() //method for when the left checkbox is checked
+	public bool FLeft; //bool for the left box
+	public bool FRight; //bool for the right box
+
+    public void FullscreenCheckLeft() //method for when the left checkbox is checked
 	{
 		FRightChecking = false; //right box is false
 		FLeftChecking = true; //left box is true
@@ -40,6 +43,9 @@ public class ChangeImageFullscreen : MonoBehaviour
 			on.sprite = on2; //the right box will be checked
 			off.sprite = off2; //the left box will be unchecked
 		}
+
+		FLeft = FLeftChecking;
+		FRight = FRightChecking;
 	}
 
 }

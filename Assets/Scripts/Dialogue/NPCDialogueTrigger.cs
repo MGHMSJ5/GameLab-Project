@@ -7,9 +7,6 @@ public class NPCDialogueTrigger : MonoBehaviour
     //The visual cue
     public GameObject mainObject;
 
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
-
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
@@ -28,7 +25,6 @@ public class NPCDialogueTrigger : MonoBehaviour
     private void Awake()
     {
         playerInRange = false;
-        visualCue.SetActive(false);
     }
 
     private void Update()
@@ -44,7 +40,6 @@ public class NPCDialogueTrigger : MonoBehaviour
 
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            visualCue.SetActive(true);
             if (Input.GetKeyDown(talkButton))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
@@ -63,10 +58,6 @@ public class NPCDialogueTrigger : MonoBehaviour
                 talkUI.SetActive(false);
                 startedDialogue = false;
             }
-        }
-        else
-        {
-            visualCue.SetActive(false);
         }
 
 

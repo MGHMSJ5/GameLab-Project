@@ -22,6 +22,8 @@ public class NotebookPages : MonoBehaviour
 
     public MouseLook mouseLook;
 
+    public int firstScanned;
+
     void Update()
     {
         pageNumberUI.text = (currentPage + 1).ToString();

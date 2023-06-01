@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2099888400752787330}
   - component: {fileID: 4181654250255158725}
   - component: {fileID: 8708191078057777497}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7039482410531197864}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bush2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

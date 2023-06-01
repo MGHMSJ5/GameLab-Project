@@ -230,7 +230,7 @@ public class MouseLook : MonoBehaviour
                 StartCoroutine(QuitZooming());
             }else
             {
-                StartZooming();
+                StartCoroutine(StartZooming());
             }
             
             //if (zoomRoutine != null) //check if the player is mid zoom
@@ -257,7 +257,7 @@ public class MouseLook : MonoBehaviour
             float _POVChange = scrollData * zoomSensitivity;
             float newPOV = cameraOptions.fieldOfView + _POVChange;
 
-            newPOV = Mathf.Clamp(newPOV, zoomPOV, (defaultPOV-1));
+            newPOV = Mathf.Clamp(newPOV, zoomPOV, (defaultPOV));
 
             cameraOptions.fieldOfView = newPOV;
         }
@@ -278,9 +278,19 @@ public class MouseLook : MonoBehaviour
         isZooming = false;
     }
 
-    private void StartZooming()
+    private IEnumerator StartZooming()
     {
         binocularVision.SetActive(true); //active this so that the player has the bonocular vision
+        float startingPOV = cameraOptions.fieldOfView;
+        float timeElapsed = 0;
+
+        while (timeElapsed < timeToZoom)
+        {
+            cameraOptions.fieldOfView = Mathf.Lerp(startingPOV, defaultPOV - zoomPOV, timeElapsed / timeToZoom);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        cameraOptions.fieldOfView = defaultPOV - zoomPOV;
         isZooming = true;
     }
 
@@ -307,6 +317,17 @@ public class MouseLook : MonoBehaviour
         InformationBlocks[infoToAppear].SetActive(true);
         InfoNotification infoNotification = InformationBlocks[infoToAppear].GetComponent<InfoNotification>();
         infoNotification.hasSeen = true;
+        //notebookPages.firstScanned = 
+        for (int i = 0; i < notebookPages.Pages.Count; i++)
+        {
+            if (notebookPages.Pages[i].tag == InformationBlocks[infoToAppear].name)
+            {
+                Debug.Log(notebookPages.Pages[i].name);
+                notebookPages.Pages[notebookPages.currentPage].SetActive(false);
+                notebookPages.Pages[i].SetActive(true);
+                notebookPages.currentPage = i;
+            }
+        }
         notificationCounter += 1;
         InformationBlocks.RemoveAt(infoToAppear);
         timerHit = 0;

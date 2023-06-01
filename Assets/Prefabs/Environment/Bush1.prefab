@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960236298229677614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bush1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8509858057268036406}
   - component: {fileID: 1995619105220147362}
   - component: {fileID: 8747173401971676385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ Lovely, the weather is perfect!
         -> rude
         
 === rude ===
-How Wude. Well, I'll take my leave. Bye.
+How rude. Well, I'll take my leave. Bye.
 -> END
 
 === direct ===

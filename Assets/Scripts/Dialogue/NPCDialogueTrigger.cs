@@ -21,6 +21,8 @@ public class NPCDialogueTrigger : MonoBehaviour
     public bool raycastHit;
     private bool startedDialogue;
 
+    public NPC npcScript;
+
     //Set inactive at the start of the game
     private void Awake()
     {
@@ -58,6 +60,11 @@ public class NPCDialogueTrigger : MonoBehaviour
                 talkUI.SetActive(false);
                 startedDialogue = false;
             }
+            npcScript.rotateToPplayer = false;
+        }
+        if (DialogueManager.GetInstance().dialogueIsPlaying && playerInRange)
+        {
+            npcScript.rotateToPplayer = true;
         }
 
 

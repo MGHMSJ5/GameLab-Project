@@ -138,16 +138,20 @@ public class MouseLook : MonoBehaviour
                     timerHit += Time.deltaTime;
                     infoToAppear = i;
                 }
-                if(hit.collider.tag != InformationBlocks[infoToAppear].name)
+                if(hit.collider.tag != InformationBlocks[infoToAppear].name && timerHit > 0)
                 {
-                       timerHit = 0;
+                       timerHit -= (Time.deltaTime/8);
                 }
             }
-        }else
+        }else if(timerHit > 0)
+        {
+            timerHit -= (Time.deltaTime/8);
+        }
+
+        if (timerHit <= 0)
         {
             timerHit = 0;
         }
-
         if (timerHit > scanTime)
         {
             StartCoroutine(ScanIsDone());
@@ -341,8 +345,8 @@ public class MouseLook : MonoBehaviour
 
         notificationCounter += 1;
         InformationBlocks.RemoveAt(infoToAppear);
-        timerHit = 0;
         infoToAppear = 0;
+        timerHit = 0;
         scanDone.SetActive(true);
         yield return new WaitForSeconds(2f);
         confetti.SetActive(true);

@@ -10,6 +10,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator portraitAnimator;
+    private Animator layoutAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -28,6 +31,10 @@ public class DialogueManager : MonoBehaviour
     private bool hasJournal = false;
     public PauseMenu pauseMenu;
 
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+    private const string LAYOUT_TAG = "layout";
+
     private void Awake()
     {
         if (instance != null)
@@ -44,6 +51,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        //get the layout animator
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -77,6 +87,10 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         Cursor.visible = true;
+
+        //reset portrait, layout and speaker
+        displayNameText.text = "???";
+        portraitAnimator.Play("default");
 
         playerMovement.enabled = false;
         mouseLook.canLookAround = false;
@@ -126,10 +140,48 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.Continue();
             //display choices, if any, for this dialogue line
             DisplayChoices();
+            //handle lags
+            HandleTags(currentStory.currentTags);
+
         }
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        //loop through each tag and handle it accordingly
+        foreach (string tag in currentTags)
+        {
+            //split the tag when ':' is seen
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag couldn't be split: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            //use the variable in the main scene
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    displayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("Tag came in but is not being handled: " + tag);
+                    break;
+
+
+            }
         }
     }
 

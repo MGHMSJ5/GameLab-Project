@@ -12,10 +12,13 @@ public class NPC : MonoBehaviour
     public Animator npcAnimator;
     public AIWalk walkScript;
     public NPCDialogueTrigger nPCDialogueTrigger;
+
+    private Vector3 originalPos;
     // Start is called before the first frame update
     void Start()
     {
         originalRot = transform.rotation;
+        originalPos = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class NPC : MonoBehaviour
         {
             FarAwayNPC(rotateToPplayer);
         }
+
     }
 
     private void ApproachalbleNPC(bool rotate)
@@ -41,6 +45,7 @@ public class NPC : MonoBehaviour
             direction.y = 0;
             Quaternion toRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            transform.localPosition = originalPos;
         }
         if (!rotate)
         {

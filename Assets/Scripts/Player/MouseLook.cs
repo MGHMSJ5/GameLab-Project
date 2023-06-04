@@ -40,6 +40,7 @@ public class MouseLook : MonoBehaviour
     public LayerMask ignoreBordersScan;
     public bool hasPickedUp;
     public GameObject notificationUI;
+    public GameObject confetti;
 
     
     [Header("Pickup")]
@@ -344,6 +345,9 @@ public class MouseLook : MonoBehaviour
         infoToAppear = 0;
         scanDone.SetActive(true);
         yield return new WaitForSeconds(2f);
+        confetti.SetActive(true);
         scanDone.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        confetti.SetActive(false);
     }
 }

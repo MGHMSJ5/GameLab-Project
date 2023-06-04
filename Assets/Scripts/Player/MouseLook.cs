@@ -34,6 +34,7 @@ public class MouseLook : MonoBehaviour
     float timerHit = 0;
     public float scanTime = 4f;
     public List<GameObject> InformationBlocks = new List<GameObject>(); //list with all of the parent GameObjects of the information about the endangered animals and plants. 
+    public List<GameObject> RewardCards = new List<GameObject>();
     public Slider scanSlider;
     public GameObject scanDone;
     public LayerMask ignoreBordersScan;
@@ -322,12 +323,21 @@ public class MouseLook : MonoBehaviour
         {
             if (notebookPages.Pages[i].tag == InformationBlocks[infoToAppear].name)
             {
-                Debug.Log(notebookPages.Pages[i].name);
+                //Debug.Log(InformationBlocks[infoToAppear].name);
                 notebookPages.Pages[notebookPages.currentPage].SetActive(false);
                 notebookPages.Pages[i].SetActive(true);
                 notebookPages.currentPage = i;
             }
         }
+
+        for (int i = 0; i < RewardCards.Count; i++)
+        {
+            if (RewardCards[i].name.Contains(InformationBlocks[infoToAppear].name))
+            {
+                RewardCards[i].SetActive(true);
+            }
+        }
+
         notificationCounter += 1;
         InformationBlocks.RemoveAt(infoToAppear);
         timerHit = 0;

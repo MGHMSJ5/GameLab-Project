@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
@@ -14,11 +15,19 @@ public class NPC : MonoBehaviour
     public NPCDialogueTrigger nPCDialogueTrigger;
 
     private Vector3 originalPos;
+
+    public bool talkingCompletelyDone = false;
+    private NavMeshAgent agent;
+    public Transform[] waypoints;
+    private int waypointIndex;
+    private Vector3 target;
+    public GameObject NPCParent;
     // Start is called before the first frame update
     void Start()
     {
         originalRot = transform.rotation;
         originalPos = transform.localPosition;
+        agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -34,6 +43,11 @@ public class NPC : MonoBehaviour
             FarAwayNPC(rotateToPplayer);
         }
 
+        if (talkingCompletelyDone)
+        {
+            nPCDialogueTrigger.enabled = false;
+            WalkAway();
+        }
     }
 
     private void ApproachalbleNPC(bool rotate)
@@ -69,5 +83,26 @@ public class NPC : MonoBehaviour
             npcAnimator.SetBool("IsTalking", false);
             walkScript.stopWalking = false;
         }
+    }
+
+    private void WalkAway()
+    {
+        npcAnimator.SetBool("Leaving", true);
+        agent.enabled = true;
+        UpdateDestination();
+        if (Vector3.Distance(transform.position, target) < 1)
+        {
+            waypointIndex += 1;
+        }
+        if (waypointIndex == waypoints.Length)
+        {
+            NPCParent.SetActive(false);
+        }
+    }
+
+    private void UpdateDestination()
+    {
+        target = waypoints[waypointIndex].position;
+        agent.SetDestination(target);
     }
 }

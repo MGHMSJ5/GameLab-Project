@@ -87,6 +87,11 @@ public class NPC : MonoBehaviour
 
     private void WalkAway()
     {
+        if (nPCDialogueTrigger.isFarAway)
+        {
+            walkScript.enabled = false;
+            NextWayPoint();
+        }
         npcAnimator.SetBool("Leaving", true);
         agent.enabled = true;
         UpdateDestination();
@@ -94,7 +99,7 @@ public class NPC : MonoBehaviour
         {
             waypointIndex += 1;
         }
-        if (waypointIndex == waypoints.Length)
+        if (waypointIndex == waypoints.Length && nPCDialogueTrigger.isApproachable)
         {
             NPCParent.SetActive(false);
         }
@@ -104,5 +109,13 @@ public class NPC : MonoBehaviour
     {
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
+    }
+
+    private void NextWayPoint()
+    {
+        if (waypointIndex == waypoints.Length)
+        {
+            waypointIndex = 0;
+        }
     }
 }

@@ -12,9 +12,9 @@ public class AnimalNormalState : AnimalBaseState
     WanderingStates curState = WanderingStates.Idle;
     float waitTimer = 0.0f;
 
-    Vector3 centerPoint; //ChatGTP grouping
-    float maxDistanceFromCenter; //ChatGTP grouping
-    float desiredDistanceBetweenAgents; //ChatGTP grouping
+    Vector3 centerPoint; //ChatGPT grouping
+    float maxDistanceFromCenter; //ChatGPT grouping
+    float desiredDistanceBetweenAgents; //ChatGPT grouping
 
     public override void EnterState(AnimalStateManager animal)
     {
@@ -81,7 +81,7 @@ public class AnimalNormalState : AnimalBaseState
 
         NavMesh.SamplePosition(randomDirection, out navHit, distance, layerMask);
 
-        //help from chatGTP making it so that the animals (especially the animals in the water) don't go to the edge of the NavMesh
+        //help from chatGPT making it so that the animals (especially the animals in the water) don't go to the edge of the NavMesh
         Vector3 targetPosition = navHit.position;
         Vector3 directionToCenter = origin - targetPosition; //points from the generated position towards the center of the NavMesh
         directionToCenter.Normalize();
@@ -92,7 +92,7 @@ public class AnimalNormalState : AnimalBaseState
         return targetPosition;
     }
 
-    //ChatGTP grouping
+    //ChatGPT grouping
     public Vector3 GetRandomPositionWithinRange(Vector3 origin, Vector3 center, float range, LayerMask layerMask)
     {
         Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * range;
@@ -103,7 +103,7 @@ public class AnimalNormalState : AnimalBaseState
 
         return navHit.position;
     }
-    //ChatGTP grouping
+    //ChatGPT grouping
     public void KeepAgentsWithinArea(AnimalStateManager[] agents)
     {
         foreach (var agent in agents)

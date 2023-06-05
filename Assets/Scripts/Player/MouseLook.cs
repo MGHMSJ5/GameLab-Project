@@ -328,7 +328,7 @@ public class MouseLook : MonoBehaviour
         {
             if (notebookPages.Pages[i].tag == InformationBlocks[infoToAppear].name)
             {
-                //Debug.Log(InformationBlocks[infoToAppear].name);
+                Debug.Log(InformationBlocks[infoToAppear].name);
                 notebookPages.Pages[notebookPages.currentPage].SetActive(false);
                 notebookPages.Pages[i].SetActive(true);
                 notebookPages.currentPage = i;

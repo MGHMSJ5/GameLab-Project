@@ -184,6 +184,7 @@ public class DialogueManager : MonoBehaviour
                 case QUEST_TAG:
                     int questIndex = int.Parse(tagValue);
                     questsList[questIndex].SetActive(true);
+                    questsList.RemoveAt(questIndex);
                     break;
                 case GRANDMA_TAG:
                     grandma.talkingCompletelyDone = true;

@@ -12,6 +12,10 @@ public class AnimalNormalState : AnimalBaseState
     WanderingStates curState = WanderingStates.Idle;
     float waitTimer = 0.0f;
 
+    Vector3 centerPoint; //ChatGTP grouping
+    float maxDistanceFromCenter; //ChatGTP grouping
+    float desiredDistanceBetweenAgents; //ChatGTP grouping
+
     public override void EnterState(AnimalStateManager animal)
     {
         animal.agent.speed = animal.walkingSpeed;
@@ -36,6 +40,8 @@ public class AnimalNormalState : AnimalBaseState
         {
             animal.SwitchState(animal.RunningAwayState);
         }
+
+        Debug.DrawLine(animal.agent.transform.position, animal.agent.destination, Color.red);
     }
 
     public override void InRange(AnimalStateManager animal)
@@ -75,6 +81,58 @@ public class AnimalNormalState : AnimalBaseState
 
         NavMesh.SamplePosition(randomDirection, out navHit, distance, layerMask);
 
+        //help from chatGTP making it so that the animals (especially the animals in the water) don't go to the edge of the NavMesh
+        Vector3 targetPosition = navHit.position;
+        Vector3 directionToCenter = origin - targetPosition; //points from the generated position towards the center of the NavMesh
+        directionToCenter.Normalize();
+
+        float maxDistanceFromCenter = distance * 0.5f; //split the distance in half
+        targetPosition = origin + directionToCenter * maxDistanceFromCenter; //move towards the center along the 'directionToCenter vector
+
+        return targetPosition;
+    }
+
+    //ChatGTP grouping
+    public Vector3 GetRandomPositionWithinRange(Vector3 origin, Vector3 center, float range, LayerMask layerMask)
+    {
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * range;
+        randomDirection += center;
+
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randomDirection, out navHit, range, layerMask);
+
         return navHit.position;
+    }
+    //ChatGTP grouping
+    public void KeepAgentsWithinArea(AnimalStateManager[] agents)
+    {
+        foreach (var agent in agents)
+        {
+            Vector3 agentPosition = agent.transform.position;
+            Vector3 directionToCenter = centerPoint - agentPosition;
+            float distanceToCenter = directionToCenter.magnitude;
+
+            if (distanceToCenter > maxDistanceFromCenter)
+            {
+                Vector3 targetPosition = centerPoint + directionToCenter.normalized * maxDistanceFromCenter;
+                agent.agent.SetDestination(targetPosition);
+            }
+
+            foreach (var otherAgent in agents)
+            {
+                if (otherAgent == agent)
+                    continue;
+
+                Vector3 otherAgentPosition = otherAgent.transform.position;
+                float distanceToOtherAgent = Vector3.Distance(agentPosition, otherAgentPosition);
+
+                if (distanceToOtherAgent < desiredDistanceBetweenAgents)
+                {
+                    Vector3 separationDirection = (agentPosition - otherAgentPosition).normalized;
+                    Vector3 targetPosition = agentPosition + separationDirection * desiredDistanceBetweenAgents;
+                    agent.agent.SetDestination(targetPosition);
+                }
+            }
+        }
     }
 }

@@ -43,6 +43,6 @@ public class GrabItems : MonoBehaviour
     IEnumerator animDone()
     {
         yield return new WaitForSeconds(3);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

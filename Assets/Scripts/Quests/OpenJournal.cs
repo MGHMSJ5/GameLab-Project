@@ -26,6 +26,6 @@ public class OpenJournal : MonoBehaviour
     IEnumerator animDone()
     {
         yield return new WaitForSeconds(3);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

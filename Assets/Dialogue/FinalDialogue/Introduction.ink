@@ -9,6 +9,6 @@ Do have any questions about that?
 
 Hey Lars! No questions needed. I got it! #speaker:Natasha #portrait:Natasha #layout:right
 
-Alright, have fun Nat! #speaker:Lars #portrait:Lars #layout:left #quest:0
+Alright, have fun Nat! #speaker:Lars #portrait:Lars #layout:left
 
 -> END

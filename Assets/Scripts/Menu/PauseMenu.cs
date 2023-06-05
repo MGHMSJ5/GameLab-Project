@@ -38,6 +38,10 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
+        if (gameIsPaused)
+        {
+            Time.timeScale = 0;
+        }
 
     }
 

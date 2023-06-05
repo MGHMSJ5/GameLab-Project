@@ -30,11 +30,13 @@ public class DialogueManager : MonoBehaviour
     public NotebookPages notebookPages;
     private bool hasJournal = false;
     public PauseMenu pauseMenu;
+    public NPC grandma;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private const string QUEST_TAG = "quest";
+    private const string GRANDMA_TAG = "grandma";
 
     public List<GameObject> questsList = new List<GameObject>();
 
@@ -182,6 +184,9 @@ public class DialogueManager : MonoBehaviour
                 case QUEST_TAG:
                     int questIndex = int.Parse(tagValue);
                     questsList[questIndex].SetActive(true);
+                    break;
+                case GRANDMA_TAG:
+                    grandma.talkingCompletelyDone = true;
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not being handled: " + tag);

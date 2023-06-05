@@ -92,8 +92,10 @@ public class NPC : MonoBehaviour
             walkScript.enabled = false;
             NextWayPoint();
         }
+        rotateToPplayer = false;
         npcAnimator.SetBool("Leaving", true);
         agent.enabled = true;
+        nPCDialogueTrigger.enabled = false;
         UpdateDestination();
         if (Vector3.Distance(transform.position, target) < 1)
         {

@@ -34,6 +34,9 @@ public class DialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
+    private const string QUEST_TAG = "quest";
+
+    public List<GameObject> questsList = new List<GameObject>();
 
     private void Awake()
     {
@@ -175,6 +178,10 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
+                    break;
+                case QUEST_TAG:
+                    int questIndex = int.Parse(tagValue);
+                    questsList[questIndex].SetActive(true);
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not being handled: " + tag);

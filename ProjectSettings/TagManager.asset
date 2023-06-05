@@ -21,6 +21,7 @@ TagManager:
   - Stratiotes aloides
   - Lemna gibba
   - Lobelia dortmanna
+  - Daisy
   layers:
   - Default
   - TransparentFX

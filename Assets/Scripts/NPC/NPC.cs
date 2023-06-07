@@ -12,9 +12,6 @@ public class NPC : MonoBehaviour
     public Quaternion originalRot;
     private Vector3 originalPos;
 
-    public bool rotateFix;
-    public float addRotate = 150f;
-
     [Header("References")]
     public Animator npcAnimator;
     public AIWalk walkScript;
@@ -111,20 +108,13 @@ public class NPC : MonoBehaviour
         {
             NPCParent.SetActive(false);
         }
-        if (rotateFix)
-        {
-            Transform NPCChild = gameObject.transform.GetChild(0);
-            Vector3 currentRotation = NPCChild.rotation.eulerAngles;
-            currentRotation.y = currentRotation.y + addRotate;
-            NPCChild.rotation = Quaternion.Euler(currentRotation);
-            rotateFix = false;
-        }
     }
 
     private void UpdateDestination()
     {
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
+        transform.LookAt(target);
     }
 
     private void NextWayPoint()

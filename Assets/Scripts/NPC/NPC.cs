@@ -5,23 +5,29 @@ using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
+    [Header("Rotate to player")]
     public Transform player;
     public float rotationSpeed = 2.5f;
     public bool rotateToPplayer = false;
-
     public Quaternion originalRot;
+    private Vector3 originalPos;
+
+    public bool rotateFix;
+    public float addRotate = 150f;
+
+    [Header("References")]
     public Animator npcAnimator;
     public AIWalk walkScript;
     public NPCDialogueTrigger nPCDialogueTrigger;
 
-    private Vector3 originalPos;
-
+    [Header("Walking away")]
     public bool talkingCompletelyDone = false;
     private NavMeshAgent agent;
     public Transform[] waypoints;
     private int waypointIndex;
     private Vector3 target;
     public GameObject NPCParent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +110,14 @@ public class NPC : MonoBehaviour
         if (waypointIndex == waypoints.Length && nPCDialogueTrigger.isApproachable)
         {
             NPCParent.SetActive(false);
+        }
+        if (rotateFix)
+        {
+            Transform NPCChild = gameObject.transform.GetChild(0);
+            Vector3 currentRotation = NPCChild.rotation.eulerAngles;
+            currentRotation.y = currentRotation.y + addRotate;
+            NPCChild.rotation = Quaternion.Euler(currentRotation);
+            rotateFix = false;
         }
     }
 

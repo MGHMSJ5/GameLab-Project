@@ -801,11 +801,14 @@ MonoBehaviour:
   rotationSpeed: 2.5
   rotateToPplayer: 0
   originalRot: {x: 0, y: 0, z: 0, w: 0}
+  rotateFix: 1
+  addRotate: 150
   npcAnimator: {fileID: 1428565351222918919}
   walkScript: {fileID: 0}
   nPCDialogueTrigger: {fileID: 0}
   talkingCompletelyDone: 0
   waypoints: []
+  NPCParent: {fileID: 0}
 --- !u!1 &5777182020084004219
 GameObject:
   m_ObjectHideFlags: 0

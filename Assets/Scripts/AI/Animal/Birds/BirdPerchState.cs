@@ -22,6 +22,9 @@ public class BirdPerchState : BirdBaseState
         {
             perchDetect.perchIsUsed = true;
         }
+
+        bird.birdAnimator.SetBool("Flying", false);
+        bird.birdAnimator.SetBool("Walking", false);
     }
 
     public override void UpdateState(BirdStateManager bird)

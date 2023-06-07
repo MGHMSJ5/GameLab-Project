@@ -29,6 +29,8 @@ public class BirdStateManager : MonoBehaviour
     public float timerToSwitchState = 0;
     public int randomNumber;
 
+    public Animator birdAnimator;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -7,6 +7,9 @@ public class BirdFlyingState : BirdBaseState
     public override void EnterState(BirdStateManager bird)
     {
         bird.agent.enabled = false;
+
+        bird.birdAnimator.SetBool("Flying", true);
+        bird.birdAnimator.SetBool("Walking", false);
     }
 
     public override void UpdateState(BirdStateManager bird)

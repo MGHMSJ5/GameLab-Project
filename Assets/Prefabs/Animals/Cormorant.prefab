@@ -107,6 +107,7 @@ MonoBehaviour:
   walkingSpeed: 5
   timerToSwitchState: 0
   randomNumber: 0
+  birdAnimator: {fileID: 7943634870110160303}
 --- !u!1001 &1614185029017379757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,3 +183,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1614185029017379757}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8039211483071653857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8788696587538760780, guid: d36cab29b1fd52c46b82a24db80bf4f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1614185029017379757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7943634870110160303
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039211483071653857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be093b39b9658024da4d9b0aa17a1337, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

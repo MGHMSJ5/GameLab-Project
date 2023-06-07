@@ -13,6 +13,8 @@ public class BirdGroundState : BirdBaseState
     float waitTimer = 0.0f;
     public override void EnterState(BirdStateManager bird)
     {
+        bird.birdAnimator.SetBool("Walking", true);
+        bird.birdAnimator.SetBool("Flying", false);
         bird.agent.enabled = true;
         bird.agent.speed = bird.walkingSpeed;
 

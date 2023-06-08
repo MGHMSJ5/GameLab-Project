@@ -18,7 +18,7 @@ public class BirdGroundState : BirdBaseState
 
     public override void UpdateState(BirdStateManager bird)
     {
-        bird.timerToSwitchState = Time.deltaTime;
+        bird.timerToSwitchState += Time.deltaTime;
 
         DoIdle(bird);
 
@@ -71,8 +71,6 @@ public class BirdGroundState : BirdBaseState
             {
                 waitTimer -= Time.deltaTime;
             }
-
-
         }
     }
 

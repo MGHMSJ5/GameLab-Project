@@ -114,7 +114,7 @@ public class MouseLook : MonoBehaviour
             {
                 if (defaultPOV != cameraOptions.fieldOfView) //if the fieldOfView of the camera is not the original view (the player is zooming in/out), then
                 {
-                    notebookPages.canOpenJournal = false;
+                    notebookPages.canOpenJournal = true;
                 }
                 else if (defaultPOV == cameraOptions.fieldOfView && !dialogueManager.dialogueIsPlaying) //if the plsyer is not zooming in or out (the fieldOfView is int eh original setting)
                 {
@@ -268,7 +268,7 @@ public class MouseLook : MonoBehaviour
             cameraOptions.fieldOfView = newPOV;
         }
     }
-    private IEnumerator QuitZooming()
+    public IEnumerator QuitZooming()
     {
         binocularVision.SetActive(false); //active this so that the player has the bonocular vision
         float startingPOV = cameraOptions.fieldOfView;
@@ -286,6 +286,7 @@ public class MouseLook : MonoBehaviour
 
     private IEnumerator StartZooming()
     {
+        isZooming = true;
         binocularVision.SetActive(true); //active this so that the player has the bonocular vision
         float startingPOV = cameraOptions.fieldOfView;
         float timeElapsed = 0;
@@ -297,7 +298,6 @@ public class MouseLook : MonoBehaviour
             yield return null;
         }
         cameraOptions.fieldOfView = defaultPOV - zoomPOV;
-        isZooming = true;
     }
 
     private IEnumerator ToggleZoom(bool isEnter)

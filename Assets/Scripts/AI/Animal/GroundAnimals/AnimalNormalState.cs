@@ -3,14 +3,8 @@ using UnityEngine.AI;
 
 public class AnimalNormalState : AnimalBaseState
 {
-    enum WanderingStates
-    {
-        Idle,
-        Wandering
-    }
-
-    WanderingStates curState = WanderingStates.Idle;
     float waitTimer = 0.0f;
+    float idleWait = 0.0f;
 
     Vector3 centerPoint; //ChatGPT grouping
     float maxDistanceFromCenter; //ChatGPT grouping
@@ -19,22 +13,13 @@ public class AnimalNormalState : AnimalBaseState
     public override void EnterState(AnimalStateManager animal)
     {
         animal.agent.speed = animal.walkingSpeed;
+
+        idleWait = Random.RandomRange(3f, 9f);
     }
 
     public override void UpdateState(AnimalStateManager animal)
     {
-        switch (curState)
-        {
-            case WanderingStates.Idle:
-                DoIdle(animal);
-                break;
-            case WanderingStates.Wandering:
-                DoWander(animal);
-                break;
-            default:
-                Debug.LogError("Should not be here, away with you! D:");
-                break;
-        }
+        DoIdle(animal);
 
         if (Vector3.Distance(animal.chaser.position, animal.transform.position) < animal.detectDistance && !animal.playerMovement.isCrouching)
         {
@@ -42,6 +27,12 @@ public class AnimalNormalState : AnimalBaseState
         }
 
         Debug.DrawLine(animal.agent.transform.position, animal.agent.destination, Color.red);
+
+        if (!animal.agent.pathPending && animal.agent.remainingDistance <= animal.agent.stoppingDistance)
+        {
+            animal.animator.SetBool("Idle", true);
+            animal.animator.SetBool("Walking", false);
+        }
     }
 
     public override void InRange(AnimalStateManager animal)
@@ -51,24 +42,28 @@ public class AnimalNormalState : AnimalBaseState
 
     private void DoIdle(AnimalStateManager animal)
     {
-        if (waitTimer > 0)
+        if (idleWait > 0)
         {
-            waitTimer -= Time.deltaTime;
+            idleWait -= Time.deltaTime;
             return;
         }
-
-        animal.agent.SetDestination(RandomNavSphere(animal.transform.position, 10.0f, animal.floorMask));
-        curState = WanderingStates.Wandering;
-    }
-
-    private void DoWander(AnimalStateManager animal)
-    {
-        if (animal.agent.pathStatus != NavMeshPathStatus.PathComplete)
-            return;
-
-        waitTimer = Random.Range(3.0f, 9.0f);
-        curState = WanderingStates.Idle;
-        
+        else if (idleWait <= 0)
+        {
+            if (waitTimer <= 0)
+            {
+                waitTimer = Random.RandomRange(2.0f, 9.0f);
+                float distance = waitTimer * animal.agent.speed;
+                animal.agent.SetDestination(RandomNavSphere(animal.transform.position, distance, animal.floorMask));
+                animal.animator.SetBool("Idle", false);
+                animal.animator.SetBool("Walking", true);
+                idleWait = Random.RandomRange(3f, 9f);
+                return;
+            }
+            else
+            {
+                waitTimer -= Time.deltaTime;
+            }
+        }
     }
 
     public Vector3 RandomNavSphere(Vector3 origin, float distance, LayerMask layerMask)
@@ -90,49 +85,5 @@ public class AnimalNormalState : AnimalBaseState
         targetPosition = origin + directionToCenter * maxDistanceFromCenter; //move towards the center along the 'directionToCenter vector
 
         return targetPosition;
-    }
-
-    //ChatGPT grouping
-    public Vector3 GetRandomPositionWithinRange(Vector3 origin, Vector3 center, float range, LayerMask layerMask)
-    {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * range;
-        randomDirection += center;
-
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randomDirection, out navHit, range, layerMask);
-
-        return navHit.position;
-    }
-    //ChatGPT grouping
-    public void KeepAgentsWithinArea(AnimalStateManager[] agents)
-    {
-        foreach (var agent in agents)
-        {
-            Vector3 agentPosition = agent.transform.position;
-            Vector3 directionToCenter = centerPoint - agentPosition;
-            float distanceToCenter = directionToCenter.magnitude;
-
-            if (distanceToCenter > maxDistanceFromCenter)
-            {
-                Vector3 targetPosition = centerPoint + directionToCenter.normalized * maxDistanceFromCenter;
-                agent.agent.SetDestination(targetPosition);
-            }
-
-            foreach (var otherAgent in agents)
-            {
-                if (otherAgent == agent)
-                    continue;
-
-                Vector3 otherAgentPosition = otherAgent.transform.position;
-                float distanceToOtherAgent = Vector3.Distance(agentPosition, otherAgentPosition);
-
-                if (distanceToOtherAgent < desiredDistanceBetweenAgents)
-                {
-                    Vector3 separationDirection = (agentPosition - otherAgentPosition).normalized;
-                    Vector3 targetPosition = agentPosition + separationDirection * desiredDistanceBetweenAgents;
-                    agent.agent.SetDestination(targetPosition);
-                }
-            }
-        }
     }
 }

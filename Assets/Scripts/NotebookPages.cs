@@ -29,7 +29,7 @@ public class NotebookPages : MonoBehaviour
         pageNumberUI.text = (currentPage + 1).ToString();
         if (canOpenJournal)
         {
-            if (!isActive && Input.GetKeyDown(getJournal) && !mouseLook.isZooming)
+            if (!isActive && Input.GetKeyDown(getJournal))
             {
                 journalObj.SetActive(true);
                 notebookPages.SetActive(true);
@@ -38,36 +38,40 @@ public class NotebookPages : MonoBehaviour
                 Cursor.visible = true;
                 Time.timeScale = 0f;
                 mouseLook.canZoom = false;
+                if (mouseLook.isZooming)
+                {
+                    Time.timeScale = 1f;
+                    mouseLook.StartCoroutine(mouseLook.QuitZooming());
+                }
+            }
+
+            if (!mouseLook.isZooming && isActive)
+            {
+                Time.timeScale = 0f;
             }
 
             if (isActive && Input.GetKeyDown(getJournal) || isActive && Input.GetKeyDown(KeyCode.Escape))
             {
+                Debug.Log("Press");
                 journalObj.SetActive(false);
                 notebookPages.SetActive(false);
                 Time.timeScale = 1f;
                 //Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 mouseLook.canZoom = true;
+                isActive = false;
             }
 
-            if (!isActive && Input.GetKeyUp(getJournal))
+            if (journalObj.activeInHierarchy)
             {
                 isActive = true;
             }
-
-            if (isActive && Input.GetKeyUp(getJournal) || isActive && Input.GetKeyDown(KeyCode.Escape))
+            if (!journalObj.activeInHierarchy)
             {
-                StartCoroutine(WaitToSetFalse());
+                isActive = false;
             }
         }
     }
-
-    IEnumerator WaitToSetFalse()
-    {
-        yield return new WaitForSeconds(0.2f);
-        isActive = false;
-    }
-
     public void ToPlants()
     {
         Pages[currentPage].SetActive(false);

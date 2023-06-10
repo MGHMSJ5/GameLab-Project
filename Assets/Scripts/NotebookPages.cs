@@ -75,8 +75,8 @@ public class NotebookPages : MonoBehaviour
     public void ToPlants()
     {
         Pages[currentPage].SetActive(false);
-        Pages[5].SetActive(true);
-        currentPage = 5;
+        Pages[4].SetActive(true);
+        currentPage = 4;
     }
 
     public void ToAnimals()

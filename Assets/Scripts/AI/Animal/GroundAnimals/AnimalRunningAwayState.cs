@@ -9,9 +9,6 @@ public class AnimalRunningAwayState : AnimalBaseState
     float currentTime;
     public override void EnterState(AnimalStateManager animal)
     {
-        animal.animator.SetBool("Walking", false);
-        animal.animator.SetBool("Idle", false);
-        animal.animator.SetBool("Running", false);
         animal.agent.speed = animal.runningSpeed;
     }
 

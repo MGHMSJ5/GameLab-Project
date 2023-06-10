@@ -21,6 +21,8 @@ public class AnimalStateManager : MonoBehaviour
     public float walkingSpeed;
     public float runningSpeed;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {

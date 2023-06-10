@@ -10,7 +10,6 @@ public class BirdFlyingState : BirdBaseState
 
         bird.birdAnimator.SetBool("Flying", true);
         bird.birdAnimator.SetBool("Walking", false);
-        bird.birdAnimator.SetBool("Idle", false);
     }
 
     public override void UpdateState(BirdStateManager bird)

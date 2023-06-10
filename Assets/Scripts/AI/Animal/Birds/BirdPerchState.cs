@@ -25,7 +25,6 @@ public class BirdPerchState : BirdBaseState
 
         bird.birdAnimator.SetBool("Flying", false);
         bird.birdAnimator.SetBool("Walking", false);
-        bird.birdAnimator.SetBool("Idle", true);
     }
 
     public override void UpdateState(BirdStateManager bird)

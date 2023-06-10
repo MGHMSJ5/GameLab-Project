@@ -22,6 +22,12 @@ public class BirdGroundState : BirdBaseState
 
         DoIdle(bird);
 
+        if (!bird.agent.pathPending && bird.agent.remainingDistance <= bird.agent.stoppingDistance)
+        {
+            bird.birdAnimator.SetBool("Idle", true);
+            bird.birdAnimator.SetBool("Walking", false);
+        }
+
         if (Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.detectDistance && !bird.playerMovement.isCrouching)
         {
             bird.SwitchState(bird.FlyingState);
@@ -32,13 +38,6 @@ public class BirdGroundState : BirdBaseState
             bird.SwitchState(bird.FlyingState);
             bird.timerToSwitchState = 0;
             bird.randomNumber = Random.Range(20, 40);
-        }
-
-
-        if (!bird.agent.pathPending && bird.agent.remainingDistance <= bird.agent.stoppingDistance)
-        {
-            bird.birdAnimator.SetBool("Idle", true);
-            bird.birdAnimator.SetBool("Walking", false);
         }
     }
 

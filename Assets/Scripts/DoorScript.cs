@@ -44,6 +44,14 @@ public class DoorScript : MonoBehaviour
                     anim = doorhit.transform.GetComponentInParent<Animator>();
                     opened = anim.GetBool("Opened");
                     anim.SetBool("Opened", !opened);
+                    if (opened)
+                    {
+                        Debug.Log("Close");
+                    }
+                    if (!opened)
+                    {
+                        Debug.Log("Open");
+                    }
                     opened = !opened;
 
                     Dictionary<string, object> parameters = new Dictionary<string, object>()

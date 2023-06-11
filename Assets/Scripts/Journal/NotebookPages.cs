@@ -50,7 +50,7 @@ public class NotebookPages : MonoBehaviour
 
             if (isActive && Input.GetKeyDown(getJournal) || isActive && Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log("Press");
+                //Debug.Log("Press");
                 journalObj.SetActive(false);
                 notebookPages.SetActive(false);
                 Time.timeScale = 1f;

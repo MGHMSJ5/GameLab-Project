@@ -49,12 +49,12 @@ public class DoorScript : MonoBehaviour
                     anim.SetBool("Opened", !opened);
                     if (opened)
                     {
-                        Debug.Log("Close");
+                        //Debug.Log("Close");
                         audioDoorClose.Play();
                     }
                     if (!opened)
                     {
-                        Debug.Log("Open");
+                        //Debug.Log("Open");
                         audioDoorOpen.Play();
                     }
                     opened = !opened;

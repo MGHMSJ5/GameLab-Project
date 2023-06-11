@@ -16,6 +16,9 @@ public class DoorScript : MonoBehaviour
 
     public GameObject pickUpIcon;
 
+    public AudioSource audioDoorOpen;
+    public AudioSource audioDoorClose;
+
     async void Start()
     {
         try
@@ -47,10 +50,12 @@ public class DoorScript : MonoBehaviour
                     if (opened)
                     {
                         Debug.Log("Close");
+                        audioDoorClose.Play();
                     }
                     if (!opened)
                     {
                         Debug.Log("Open");
+                        audioDoorOpen.Play();
                     }
                     opened = !opened;
 

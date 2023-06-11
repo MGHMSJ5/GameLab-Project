@@ -324,16 +324,16 @@ public class MouseLook : MonoBehaviour
         InfoNotification infoNotification = InformationBlocks[infoToAppear].GetComponent<InfoNotification>();
         infoNotification.hasSeen = true;
         //notebookPages.firstScanned = 
-        for (int i = 0; i < notebookPages.Pages.Count; i++)
-        {
-            if (notebookPages.Pages[i].tag == InformationBlocks[infoToAppear].name)
-            {
+        //for (int i = 0; i < notebookPages.Pages.Count; i++)
+        //{
+            //if (notebookPages.Pages[i].tag == InformationBlocks[infoToAppear].name)
+            //{
                 //Debug.Log(InformationBlocks[infoToAppear].name);
-                notebookPages.Pages[notebookPages.currentPage].SetActive(false);
-                notebookPages.Pages[i].SetActive(true);
-                notebookPages.currentPage = i;
-            }
-        }
+                //notebookPages.Pages[notebookPages.currentPage].SetActive(false);
+                //notebookPages.Pages[i].SetActive(true);
+                //notebookPages.currentPage = i;
+            //}
+        //}
 
         for (int i = 0; i < RewardCards.Count; i++)
         {

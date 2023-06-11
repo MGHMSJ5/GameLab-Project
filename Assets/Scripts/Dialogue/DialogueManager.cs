@@ -31,12 +31,14 @@ public class DialogueManager : MonoBehaviour
     private bool hasJournal = false;
     public PauseMenu pauseMenu;
     public NPC grandma;
+    public NPC jogger;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private const string QUEST_TAG = "quest";
     private const string GRANDMA_TAG = "grandma";
+    private const string JOGGER_TAG = "jogger";
 
     public List<GameObject> questsList = new List<GameObject>();
 
@@ -79,14 +81,14 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        
+
         if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Mouse0) || currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Space))
         {
             ContinueStory();
         }
     }
 
-        public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
@@ -188,6 +190,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case GRANDMA_TAG:
                     grandma.talkingCompletelyDone = true;
+                    break;
+                case JOGGER_TAG:
+                    jogger.talkingCompletelyDone = true;
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not being handled: " + tag);

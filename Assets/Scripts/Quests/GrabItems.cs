@@ -12,11 +12,14 @@ public class GrabItems : MonoBehaviour
     private string counterInString;
 
     private Animator questAnimator;
+
+    public Animator controlsAnimator;
     // Start is called before the first frame update
     void Start()
     {
         questAnimator = GetComponent<Animator>();
         maxItems = itemsToPickUp.Count;
+        controlsAnimator.Play("Out");
     }
 
     // Update is called once per frame

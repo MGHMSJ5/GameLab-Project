@@ -91,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime); //add the velocity to the player. Multiply it with Time.deltaTime again to complete the formule (because time is t squared (t2))
 
         //running
-        if (Input.GetKeyDown(runningButton)) //if running button is pressed
-        {
-            speed = runningSpeed; //change speed
-        }
+        //if (Input.GetKeyDown(runningButton)) //if running button is pressed
+        //{
+        //    speed = runningSpeed; //change speed
+        //}
 
         if (Input.GetKeyUp(runningButton)) //if running button is released
         {

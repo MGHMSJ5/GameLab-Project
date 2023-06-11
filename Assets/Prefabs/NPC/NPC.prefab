@@ -989,6 +989,9 @@ MonoBehaviour:
   npcAnimator: {fileID: 1236184977081043201}
   walkScript: {fileID: 0}
   nPCDialogueTrigger: {fileID: 0}
+  talkingCompletelyDone: 0
+  waypoints: []
+  NPCParent: {fileID: 0}
 --- !u!1 &5583480641685936537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1204,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8ab985a60fa60b43b4c263f2fbe8673, type: 2}
+  - {fileID: 2100000, guid: ff5f8506ecd217a43ac1709e1202fed7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

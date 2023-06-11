@@ -635,7 +635,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: d6b6838056cc0b24f96defffb4aba2ed, type: 3}
+  - {fileID: 2100000, guid: 666cfe0e7daa92243b665a19c549e45b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -801,8 +801,6 @@ MonoBehaviour:
   rotationSpeed: 2.5
   rotateToPplayer: 0
   originalRot: {x: 0, y: 0, z: 0, w: 0}
-  rotateFix: 1
-  addRotate: 150
   npcAnimator: {fileID: 1428565351222918919}
   walkScript: {fileID: 0}
   nPCDialogueTrigger: {fileID: 0}

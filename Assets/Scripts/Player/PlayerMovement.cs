@@ -39,10 +39,20 @@ public class PlayerMovement : MonoBehaviour
     public float crouchingSpeed = 5f; //the speed of the player when crouching
     public bool isCrouching = false;
 
+    [Header("Headbob")]
+    [SerializeField] private float walkBobSpeed = 14f;
+    [SerializeField] private float walkBobAmount = 0.05f;
+    [SerializeField] private float crouchBobSpeed = 8f;
+    [SerializeField] private float crouchBobAmount = 0.025f;
+    public float defaultYPos = 0;
+    private float timer;
+
     private void Awake()
     {
         originalSpeed = speed; //set the original speed
         originalPosition = shadowPlayer.localPosition;
+
+        //defaultYPos = playerAnimator.transform.localPosition.y;
     }
 
     // Update is called once per frame
@@ -120,5 +130,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         shadowPlayer.localPosition = originalPosition;
+
+        if (isMoving)
+        {
+            HandleHeadBob();
+        }
+    }
+
+    private void HandleHeadBob()
+    {
+        timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : walkBobSpeed);
+        playerCameraObj.transform.position = new Vector3(playerCameraObj.transform.position.x, (isCrouching ? defaultYPos-cameraDown : defaultYPos) + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : walkBobAmount), playerCameraObj.transform.position.z);
     }
 }

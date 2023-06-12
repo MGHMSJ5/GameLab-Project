@@ -8,6 +8,8 @@ public class Sound : MonoBehaviour
     private static float sliderValue = 1;
     [SerializeField] Slider soundSlider;
 
+    public List<AudioSource> AllAudio = new List<AudioSource>();
+
     public void Start()
     {
         soundSlider.value = sliderValue;
@@ -16,6 +18,10 @@ public class Sound : MonoBehaviour
     public void Update()
     {
         sliderValue = soundSlider.value;
+        for (int i = 0; i < AllAudio.Count; i++)
+        {
+            AllAudio[i].volume = sliderValue;
+        }
     }
 
     public void SoundOn()
@@ -33,6 +39,6 @@ public class Sound : MonoBehaviour
 
     public void ChangeSound()
     {
-        AudioListener.volume = sliderValue;
+        //AudioListener.volume = sliderValue;
     }
 }

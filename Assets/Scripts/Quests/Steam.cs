@@ -20,7 +20,6 @@ public class Steam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(numerOfScanned);
         if (grandmaNPC.talkingCompletelyDone)
         {
             achievements[0].SetActive(true);

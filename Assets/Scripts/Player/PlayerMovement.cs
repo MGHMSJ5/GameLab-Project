@@ -51,8 +51,6 @@ public class PlayerMovement : MonoBehaviour
     {
         originalSpeed = speed; //set the original speed
         originalPosition = shadowPlayer.localPosition;
-
-        //defaultYPos = playerAnimator.transform.localPosition.y;
     }
 
     // Update is called once per frame
@@ -139,7 +137,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleHeadBob()
     {
+        defaultYPos = playerCameraObj.transform.position.y;
         timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : walkBobSpeed);
-        playerCameraObj.transform.position = new Vector3(playerCameraObj.transform.position.x, (isCrouching ? defaultYPos-cameraDown : defaultYPos) + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : walkBobAmount), playerCameraObj.transform.position.z);
+        playerCameraObj.transform.position = new Vector3(playerCameraObj.transform.position.x, defaultYPos + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : walkBobAmount), playerCameraObj.transform.position.z);
     }
 }

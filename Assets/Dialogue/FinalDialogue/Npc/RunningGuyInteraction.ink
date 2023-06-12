@@ -47,6 +47,10 @@ Well, I'm just going to finish my jog, have a nice day! #speaker:Jogger #portrai
 -> END
 
 === Rules ===
+I am telling you the rules right now, as the forester of this here forest. #speaker:Natasha #portrait:Natasha #layout:right
+So, there is no sign that I can't jog here? Then how should I have known. #speaker:Jogger #portrait:RunningGuy #layout:left
+Well, I'll go finish my jog and then head out!
+But.. #speaker:Natasha #portrait:Natasha #layout:right
 -> END
         
 === EurasianOtter ===

@@ -5,10 +5,10 @@ Hello, ma'am. I noticed that you are picking some flowers. #speaker:Natasha #por
 Those are not allowed to be picked in this area.
 But, young lady, I've been picking flowers here for years! #speaker:OldLady #portrait:OldLady #layout:left
 No one has complained about it before!
+    * Oh, never mind. #speaker:Natasha #portrait:Natasha #layout:right
+        -> nevermind
     * I understand ma'am, but please refrain from picking those flowers. . #speaker:Natasha #portrait:Natasha #layout:right
         -> understand
-    * Oh, never mind . #speaker:Natasha #portrait:Natasha #layout:right
-        -> nevermind
         
 === understand ===
 Picking them can harm their distribution here. #speaker:Natasha #portrait:Natasha #layout:right

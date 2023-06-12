@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     public PauseMenu pauseMenu;
     public NPC grandma;
     public NPC jogger;
+    public GameObject prunerQuest;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -39,6 +40,7 @@ public class DialogueManager : MonoBehaviour
     private const string QUEST_TAG = "quest";
     private const string GRANDMA_TAG = "grandma";
     private const string JOGGER_TAG = "jogger";
+    private const string PRUNER_TAG = "pruner";
 
     public List<GameObject> questsList = new List<GameObject>();
 
@@ -193,6 +195,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case JOGGER_TAG:
                     jogger.talkingCompletelyDone = true;
+                    break;
+                case PRUNER_TAG:
+                    prunerQuest.SetActive(true);
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not being handled: " + tag);

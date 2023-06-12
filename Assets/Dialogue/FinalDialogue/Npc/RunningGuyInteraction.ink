@@ -3,12 +3,12 @@
 === main ===
 Hey, stop what you're doing out there. #speaker:Natasha #portrait:Natasha #layout:right
 I am just taking a jog trough the forest, I don't see the problem. #speaker:Jogger #portrait:RunningGuy #layout:left
+    * Ugh, never mind. #speaker:Natasha #portrait:Natasha #layout:right
+        -> nevermind    
     * You know you are not supposed to go off of the defined path. #speaker:Natasha #portrait:Natasha #layout:right
         -> DefinedPath
     * Get back on the path! #speaker:Natasha #portrait:Natasha #layout:right
         -> BackOnPath
-    * Ugh, never mind. #speaker:Natasha #portrait:Natasha #layout:right
-        -> nevermind
         
 === DefinedPath ===
 The paths have a reason for being there. #speaker:Natasha #portrait:Natasha #layout:right

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Steam : MonoBehaviour
 {
-    public List<InfoNotification> scannables = new List<InfoNotification>();
+    public List<GameObject> scannables = new List<GameObject>();
     private int totalScannable;
     private int numerOfScanned;
     public NPC runningNPC;
@@ -20,6 +20,7 @@ public class Steam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(numerOfScanned);
         if (grandmaNPC.talkingCompletelyDone)
         {
             achievements[0].SetActive(true);
@@ -31,7 +32,7 @@ public class Steam : MonoBehaviour
 
         for (int i = 0; i < scannables.Count; i++)
         {
-            if (scannables[i].hasSeen)
+            if (scannables[i].activeSelf)
             {
                 numerOfScanned += 1;
                 scannables.RemoveAt(i);

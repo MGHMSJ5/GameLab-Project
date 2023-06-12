@@ -1752,7 +1752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundSlider: {fileID: 335096151}
-  AllAudio: []
+  AllAudio:
+  - {fileID: 1115931046}
 --- !u!1001 &842770971
 PrefabInstance:
   m_ObjectHideFlags: 0

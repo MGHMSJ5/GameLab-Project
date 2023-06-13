@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //to be able to change scenes in Unity
 
 public class DialogueGate : MonoBehaviour
 {
@@ -31,12 +32,14 @@ public class DialogueGate : MonoBehaviour
         {
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             StartCoroutine(waitForPlayer());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
         }
 
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && pickups.keyGO == null)
         {
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
             StartCoroutine(waitForPlayer());
+
         }
     }
 

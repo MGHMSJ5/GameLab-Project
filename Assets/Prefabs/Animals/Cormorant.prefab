@@ -68,7 +68,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1.8146975
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 8
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4763880767292742409
 MonoBehaviour:
@@ -101,6 +101,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   normDir: {x: 0, y: 0, z: 0}
   detectDistance: 6
+  crouchDetect: 6
   floorMask:
     serializedVersion: 2
     m_Bits: 1

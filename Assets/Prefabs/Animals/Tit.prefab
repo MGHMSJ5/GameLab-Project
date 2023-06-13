@@ -77,7 +77,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4892978415731293666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f84083b1ea898d64a810b2c4bb94aff8, type: 3}
   m_Name: 
@@ -86,13 +86,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   perchListNum: 0
-  flyingSpeed: 12
+  flyingSpeed: 7
   agent: {fileID: 4892978415731293694}
   chaser: {fileID: 0}
   distanceWhenStartFlying: 5
   playerMovement: {fileID: 0}
   normDir: {x: 0, y: 0, z: 0}
   detectDistance: 6
+  crouchDetect: 6
   floorMask:
     serializedVersion: 2
     m_Bits: 1

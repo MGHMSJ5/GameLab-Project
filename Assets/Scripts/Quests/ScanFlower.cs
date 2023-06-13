@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ScanFlower : MonoBehaviour
 {
-    public InfoNotification flowerInfoPage;
+    public GameObject flowerInfoPage;
     private Animator questAnimator;
+
+    public List<GameObject> dialogueBorders = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +17,14 @@ public class ScanFlower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (flowerInfoPage.hasSeen)
+        if (flowerInfoPage.activeSelf)
         {
             questAnimator.SetBool("Done", true);
+            for (int i = 0; i < dialogueBorders.Count; i++)
+            {
+                Destroy(dialogueBorders[i]);
+                dialogueBorders.RemoveAt(i);
+            }
             StartCoroutine(animDone());
         }
     }

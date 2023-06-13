@@ -29,6 +29,7 @@ public class Rewards : MonoBehaviour
     void Start()
     {
         ScannedBools.Add(scanCormorant);
+        ScannedBools.Add(scanDuck);
         ScannedBools.Add(scanOtter);
         ScannedBools.Add(scanFallowDeer);
         ScannedBools.Add(scanRedDeer);

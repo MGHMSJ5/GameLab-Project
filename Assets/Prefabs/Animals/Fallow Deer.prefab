@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1090737897135982282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -82.03, y: -40.241295, z: 39.11}
-  m_LocalScale: {x: 1.6695372, y: 1.6695372, z: 1.6695372}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 187186254319477737}
   m_Father: {fileID: 0}
@@ -84,7 +84,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1217880638884942820}
   chaser: {fileID: 0}
-  distWhenStartRunning: 5
   playerMovement: {fileID: 0}
   normDir: {x: 0, y: 0, z: 0}
   detectDistance: 20

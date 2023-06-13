@@ -28,7 +28,7 @@ public class BirdGroundState : BirdBaseState
             bird.birdAnimator.SetBool("Walking", false);
         }
 
-        if (Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.detectDistance && !bird.playerMovement.isCrouching || bird.playerMovement.isCrouching && Vector3.Distance(bird.chaser.position, bird.transform.position) > bird.crouchingDetec)
+        if (Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.detectDistance && !bird.playerMovement.isCrouching || bird.playerMovement.isCrouching && Vector3.Distance(bird.chaser.position, bird.transform.position) > bird.crouchDetect)
         {
             bird.SwitchState(bird.FlyingState);
         }

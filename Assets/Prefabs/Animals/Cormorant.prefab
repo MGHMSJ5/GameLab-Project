@@ -94,7 +94,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   perchListNum: 0
-  flyingSpeed: 5
+  flyingSpeed: 8
   agent: {fileID: 593238558889458585}
   chaser: {fileID: 0}
   distanceWhenStartFlying: 7

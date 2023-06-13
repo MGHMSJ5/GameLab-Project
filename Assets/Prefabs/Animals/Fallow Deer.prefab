@@ -87,12 +87,13 @@ MonoBehaviour:
   distWhenStartRunning: 5
   playerMovement: {fileID: 0}
   normDir: {x: 0, y: 0, z: 0}
-  detectDistance: 6
+  detectDistance: 20
+  crouchingDistance: 8
   floorMask:
     serializedVersion: 2
     m_Bits: 1
   walkingSpeed: 4
-  runningSpeed: 10
+  runningSpeed: 15
   animator: {fileID: 859276134584222697}
 --- !u!1001 &5817991190293888289
 PrefabInstance:

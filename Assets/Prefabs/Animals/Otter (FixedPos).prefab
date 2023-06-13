@@ -84,10 +84,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3663834553930669765}
   chaser: {fileID: 0}
-  distWhenStartRunning: 5
   playerMovement: {fileID: 0}
   normDir: {x: 0, y: 0, z: 0}
-  detectDistance: 6
+  detectDistance: 10
+  crouchingDistance: 8
   floorMask:
     serializedVersion: 2
     m_Bits: 1

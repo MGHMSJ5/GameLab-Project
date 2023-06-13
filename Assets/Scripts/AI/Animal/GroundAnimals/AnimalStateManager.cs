@@ -11,7 +11,6 @@ public class AnimalStateManager : MonoBehaviour
 
     public NavMeshAgent agent;
     public Transform chaser;
-    public float distWhenStartRunning = 5f;
     public PlayerMovement playerMovement;
     public Vector3 normDir = new Vector3();
     public int detectDistance = 15;

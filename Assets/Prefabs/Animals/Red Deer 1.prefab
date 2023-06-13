@@ -84,15 +84,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 8445068656716044682}
   chaser: {fileID: 0}
-  distWhenStartRunning: 5
   playerMovement: {fileID: 0}
   normDir: {x: 0, y: 0, z: 0}
-  detectDistance: 6
+  detectDistance: 20
+  crouchingDistance: 8
   floorMask:
     serializedVersion: 2
     m_Bits: 1
-  walkingSpeed: 3
-  runningSpeed: 8
+  walkingSpeed: 3.5
+  runningSpeed: 15
   animator: {fileID: 8155985156787437675}
 --- !u!1001 &8155985157650174077
 PrefabInstance:

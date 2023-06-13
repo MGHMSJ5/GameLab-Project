@@ -20,7 +20,8 @@ public class BirdStateManager : MonoBehaviour
     public float distanceWhenStartFlying = 5f;
     public PlayerMovement playerMovement;
     public Vector3 normDir = new Vector3();
-    public int detectDistance = 6;
+    public int detectDistance = 10;
+    public int crouchDetect = 6;
 
     public LayerMask floorMask = 0;
 

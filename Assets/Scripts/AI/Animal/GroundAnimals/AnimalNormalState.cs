@@ -15,6 +15,7 @@ public class AnimalNormalState : AnimalBaseState
         animal.agent.speed = animal.walkingSpeed;
 
         idleWait = Random.RandomRange(3f, 9f);
+        animal.animator.SetBool("Running", false);
     }
 
     public override void UpdateState(AnimalStateManager animal)

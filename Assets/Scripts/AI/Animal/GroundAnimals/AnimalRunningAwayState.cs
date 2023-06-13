@@ -11,16 +11,16 @@ public class AnimalRunningAwayState : AnimalBaseState
     {
         animal.animator.SetBool("Walking", false);
         animal.animator.SetBool("Idle", false);
-        animal.animator.SetBool("Running", false);
+        animal.animator.SetBool("Running", true);
         animal.agent.speed = animal.runningSpeed;
     }
 
     public override void UpdateState(AnimalStateManager animal)
     {
         animal.normDir = Quaternion.AngleAxis(randomInt, Vector3.up) * animal.normDir;
-        MoveToPos(animal.transform.position - (animal.normDir * animal.distWhenStartRunning), animal);
+        MoveToPos(animal.transform.position - (animal.normDir * animal.detectDistance), animal);
 
-        if (Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.detectDistance || animal.playerMovement.isCrouching)
+        if (Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.detectDistance || animal.playerMovement.isCrouching && Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.crouchingDistance)
         {
             animal.SwitchState(animal.NormalState);
         }

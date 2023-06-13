@@ -21,7 +21,7 @@ public class AnimalNormalState : AnimalBaseState
     {
         DoIdle(animal);
 
-        if (Vector3.Distance(animal.chaser.position, animal.transform.position) < animal.detectDistance && !animal.playerMovement.isCrouching)
+        if (Vector3.Distance(animal.chaser.position, animal.transform.position) < animal.detectDistance && !animal.playerMovement.isCrouching || Vector3.Distance(animal.chaser.position, animal.transform.position) < animal.crouchingDistance && animal.playerMovement.isCrouching)
         {
             animal.SwitchState(animal.RunningAwayState);
         }

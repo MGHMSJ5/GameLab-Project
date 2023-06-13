@@ -14,7 +14,8 @@ public class AnimalStateManager : MonoBehaviour
     public float distWhenStartRunning = 5f;
     public PlayerMovement playerMovement;
     public Vector3 normDir = new Vector3();
-    public int detectDistance = 6;
+    public int detectDistance = 15;
+    public int crouchingDistance = 8;
 
     public LayerMask floorMask = 0;
 

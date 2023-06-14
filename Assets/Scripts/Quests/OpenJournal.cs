@@ -7,6 +7,8 @@ public class OpenJournal : MonoBehaviour
     public GameObject journalManager;
     NotebookPages notebookPages;
     private Animator questAnimator;
+
+    public List<GameObject> dialogueBorders = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,11 @@ public class OpenJournal : MonoBehaviour
         if (notebookPages.isActive)
         {
             questAnimator.SetBool("Done", true);
+            for (int i = 0; i < dialogueBorders.Count; i++)
+            {
+                Destroy(dialogueBorders[i]);
+                dialogueBorders.RemoveAt(i);
+            }
             StartCoroutine(animDone());
         }
     }

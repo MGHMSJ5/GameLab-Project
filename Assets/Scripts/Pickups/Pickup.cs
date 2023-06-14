@@ -13,6 +13,10 @@ public class Pickup : MonoBehaviour
     public GameObject journalUI;
     public GameObject prunerGO;
     public GameObject keyGO;
+
+    [Header("Gate Ainimators")]
+    public Animator gateALeft;
+    public Animator gateBRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +61,8 @@ public class Pickup : MonoBehaviour
             {
                 Destroy(keyGO);
                 keyGO = null;
+                gateALeft.Play("Gate1Aopen");
+                gateBRight.Play("Gate1Bopen");
             }
         }
     }

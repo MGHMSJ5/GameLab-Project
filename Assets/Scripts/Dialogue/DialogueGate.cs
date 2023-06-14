@@ -19,6 +19,8 @@ public class DialogueGate : MonoBehaviour
     //Bool for if the player is in range
     private bool playerInRange;
 
+    private bool dialogueStarted = false;
+
     //Set inactive at the start of the game
     private void Awake()
     {
@@ -38,8 +40,14 @@ public class DialogueGate : MonoBehaviour
         {
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
             StartCoroutine(waitForPlayer());
+            dialogueStarted = true;
             //Fix with tag ↓
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
+        }
+
+        if (dialogueStarted && !DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
         }
     }
 

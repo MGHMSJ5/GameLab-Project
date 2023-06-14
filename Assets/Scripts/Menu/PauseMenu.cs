@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject journal3DMaker; //the camera and real 3d model journal
 
+    public GameObject blackness;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -70,7 +72,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitGame() // a function that'll be calld whenever the 'Exit' button is pressed
     {
+        StartCoroutine(GoToMenu());
+    }
+
+    IEnumerator GoToMenu()
+    {
+        blackness.SetActive(true);
+        yield return new WaitForSecondsRealtime(2f);
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
-        Time.timeScale = 1f;
     }
 }

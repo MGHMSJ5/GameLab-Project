@@ -42,17 +42,11 @@ public class DialogueGate : MonoBehaviour
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
             StartCoroutine(waitForPlayer());
             dialogueStarted = true;
-            //Fix with tag ↓
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
         }
 
         if (dialogueStarted && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            blackness.SetActive(true);
-            Animator blackFade = blackness.GetComponent<Animator>();
-            blackFade.SetBool("ToNothing", false);
-            blackFade.SetBool("ToBlack", true);
-            StartCoroutine(waitForBlack());
+            StartCoroutine(GoToMenu());
         }
     }
 
@@ -78,8 +72,9 @@ public class DialogueGate : MonoBehaviour
         yield return new WaitForSeconds(30);
     }
 
-    IEnumerator waitForBlack()
+    IEnumerator GoToMenu()
     {
+        blackness.SetActive(true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
     }

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7109ce3b-b38c-44de-ba5d-1aafb22fa09f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLab-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLab-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/NoTrespassingSign+Dialogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/NoTrespassingSign+Dialogue.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +69,8 @@
       <updated>1681673169580</updated>
       <workItem from="1681673241215" duration="138000" />
       <workItem from="1686223218647" duration="3000" />
+      <workItem from="1686769444866" duration="5000" />
+      <workItem from="1686769674096" duration="5000" />
     </task>
     <servers />
   </component>

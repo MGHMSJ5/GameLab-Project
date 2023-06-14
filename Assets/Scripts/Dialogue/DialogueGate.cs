@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement; //to be able to change scenes in Unity
 
 public class DialogueGate : MonoBehaviour
 {
-    //The visual cue
+    [Header("Referneces")]
     public GameObject mainObject;
     public Pickup pickups;
+    public GameObject blackness;
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
@@ -47,7 +48,11 @@ public class DialogueGate : MonoBehaviour
 
         if (dialogueStarted && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
+            blackness.SetActive(true);
+            Animator blackFade = blackness.GetComponent<Animator>();
+            blackFade.SetBool("ToNothing", false);
+            blackFade.SetBool("ToBlack", true);
+            StartCoroutine(waitForBlack());
         }
     }
 
@@ -71,5 +76,11 @@ public class DialogueGate : MonoBehaviour
     {
         playerInRange = false;
         yield return new WaitForSeconds(30);
+    }
+
+    IEnumerator waitForBlack()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
     }
 }

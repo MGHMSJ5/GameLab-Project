@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Fullscreen : MonoBehaviour
 {
-    public ChangeImageFullscreen changeImageFullscreen;
+    public ChangeImageFullscreen changeImageFullscreen; //reference to script that is bound to the buttons in Options
     private void Update()
     {
-        if (changeImageFullscreen.FRight & Input.GetKeyDown(KeyCode.F11))
+        if (changeImageFullscreen.FRight & Input.GetKeyDown(KeyCode.F11)) //if fullscreen was on
         {
             changeImageFullscreen.FullscreenCheckLeft();
             FulscreenOFF();
         }
-        if (changeImageFullscreen.FLeft & Input.GetKeyDown(KeyCode.F11))
-        {
+        if (changeImageFullscreen.FLeft & Input.GetKeyDown(KeyCode.F11)) //if fullscreen was off
+        { 
             changeImageFullscreen.FullscreenCheckRight();
             FullscreenON();
         }

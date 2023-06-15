@@ -50,12 +50,12 @@ public class Rewards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < RewardGO.Count; i++)
+        for (int i = 0; i < RewardGO.Count; i++) //go through statue list
         {
-            if (RewardGO[0].activeSelf)
+            if (RewardGO[0].activeSelf) //if it's active
             {
-                scanCormorant = true;
-                ScannedBools[0] = true;
+                scanCormorant = true; //set static bool to true. So that when scene is switched, the bool in the list will be true
+                ScannedBools[0] = true; //set to true so that the statue will be activated in current scene
             }
             if (RewardGO[1].activeSelf)
             {
@@ -138,9 +138,9 @@ public class Rewards : MonoBehaviour
                 ScannedBools[16] = true;
             }
 
-            if (ScannedBools[i])
+            if (ScannedBools[i]) //if bool is true
             {
-                RewardGO[i].SetActive(true);
+                RewardGO[i].SetActive(true); //activate reward
             }
         }
 

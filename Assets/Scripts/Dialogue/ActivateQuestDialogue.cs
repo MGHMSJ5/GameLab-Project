@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class ActivateQuestDialogue : MonoBehaviour
 {
-    public List<GameObject> Quests = new List<GameObject>();
+    public GrabItems grabItems;
+    public ScanFlower scanFlower;
+    public OpenJournal openJournal;
     public List<GameObject> Dialogue = new List<GameObject>();
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < Quests.Count; i++)
+        if (grabItems.startDialogue && Dialogue[0] != null)
         {
-            if (Quests[i] == null)
-            {
-                //Debug.Log("Quest" + i + "gone")
-                    Dialogue[i].SetActive(true);
-
-                Quests.RemoveAt(i);
-                Dialogue.RemoveAt(i);
-                
-            }
-
+            Dialogue[0].SetActive(true);
+        }
+        if (scanFlower.startDialogue && Dialogue[1] != null)
+        {
+            Dialogue[1].SetActive(true);
+        }
+        if (openJournal.startDialogue && Dialogue[2] != null)
+        {
+            Dialogue[2].SetActive(true);
         }
     }
 }

@@ -16,6 +16,8 @@ public class DialogueSignTrigger : MonoBehaviour
     //Bool for if the player is in range
     private bool playerInRange;
 
+    private bool destroyTriggers = false;
+
     //Set inactive at the start of the game
     private void Awake()
     {
@@ -28,12 +30,15 @@ public class DialogueSignTrigger : MonoBehaviour
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            destroyTriggers = true;
+        }
+        if (destroyTriggers)
+        {
             for (int i = 0; i < allSignTriggers.Count; i++)
             {
                 Destroy(allSignTriggers[i]);
                 allSignTriggers.RemoveAt(i);
             }
-
         }
     }
 

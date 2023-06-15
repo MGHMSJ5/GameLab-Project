@@ -49,8 +49,14 @@ public class DialogueGate : MonoBehaviour
             StartCoroutine(GoToMenu());
         }
     }
+    IEnumerator GoToMenu()
+    {
+        blackness.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
+    }
 
-        private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -72,10 +78,5 @@ public class DialogueGate : MonoBehaviour
         yield return new WaitForSeconds(30);
     }
 
-    IEnumerator GoToMenu()
-    {
-        blackness.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //go to the previous scene that is in the queue (In Build Settings).
-    }
+
 }

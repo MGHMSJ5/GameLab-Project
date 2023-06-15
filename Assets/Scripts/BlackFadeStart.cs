@@ -12,12 +12,6 @@ public class BlackFadeStart : MonoBehaviour
         StartCoroutine(waitForFadeStart());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator waitForFadeStart()
     {
         yield return new WaitForSeconds(0.5f);

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,11 +22,13 @@ public class footsteps : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))//if this is being pressed the player will move
         {
             if (!isCrouching)  //if the player is not crouching, this will play
+            //this ↑ can also be '!playerMovement.isCrouching' it works the same as 'isCrouching' but from another script
             {
                 footstepsSound.enabled = true;
                 crouchingSound.enabled = false;
             }
             if (isCrouching) //if the player is crouching, this will play
+            //this ↑ can also be 'playerMovement.isCrouching', it works the same as 'isCrouching' but from another script
             {
                 footstepsSound.enabled = false;
                 crouchingSound.enabled = true;

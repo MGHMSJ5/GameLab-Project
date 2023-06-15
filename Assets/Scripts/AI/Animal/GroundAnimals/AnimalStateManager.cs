@@ -9,28 +9,28 @@ public class AnimalStateManager : MonoBehaviour
     public AnimalNormalState NormalState = new AnimalNormalState();
     public AnimalRunningAwayState RunningAwayState = new AnimalRunningAwayState();
 
-    public NavMeshAgent agent;
-    public Transform chaser;
-    public PlayerMovement playerMovement;
-    public Vector3 normDir = new Vector3();
+    [Header("Variables")]
+    public float walkingSpeed;
+    public float runningSpeed;
     public int detectDistance = 15;
     public int crouchingDistance = 8;
 
     public LayerMask floorMask = 0;
 
-    public float walkingSpeed;
-    public float runningSpeed;
-
+    [Header("References")]
+    public NavMeshAgent agent;
+    public Transform chaser;
+    public PlayerMovement playerMovement;
     public Animator animator;
 
-    // Start is called before the first frame update
+    [Header("Used varables")]
+    public Vector3 normDir = new Vector3();
     void Start()
     {
         playerMovement = chaser.GetComponent<PlayerMovement>();
 
         currentState = NormalState; //starting state for the state machine
-
-        currentState.EnterState(this); //"this" is a reference to the context (this EXACT Monobehaviour script)
+        currentState.EnterState(this); //"this" is a reference to the context (this EXACT Monobehaviour script in this object)
 
         if (agent == null)
         {
@@ -41,22 +41,19 @@ public class AnimalStateManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        currentState.UpdateState(this);
-
+        currentState.UpdateState(this); //run this 
         if (chaser == null)
         {
             return;
         }
-        normDir = (chaser.position - transform.position).normalized;
+        normDir = (chaser.position - transform.position).normalized; //position of the chaser (player)
     }
 
-    public void SwitchState(AnimalBaseState state)
+    public void SwitchState(AnimalBaseState state) //switch from states
     {
         currentState = state;
-        state.EnterState(this);
+        state.EnterState(this); //enter the new state
     }
-
 }

@@ -1,28 +1,25 @@
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
 public class BirdPerchState : BirdBaseState
 {
     PerchDetect perchDetect;
-
     int currentPerch;
-    int listLenght;
     public override void EnterState(BirdStateManager bird)
     {
-        bird.randomNumber = Random.Range(10, 20);
+        bird.timerToSwitchState = 0; //reset timer
+        bird.randomNumber = Random.Range(10, 20); //set number for random timer
 
-        perchDetect = bird.birdPerches[bird.perchListNum].GetComponent<PerchDetect>();
-        listLenght = bird.birdPerches.Count;
+        perchDetect = bird.birdPerches[bird.perchListNum].GetComponent<PerchDetect>(); //get script from perch where bird is on
         currentPerch = bird.perchListNum; //is used to make sure that the bird won't go to the same perch when it flies to another place
         Vector3 zRotation = bird.transform.eulerAngles;
         zRotation.x = 0f;
-        bird.transform.eulerAngles = zRotation;
+        bird.transform.eulerAngles = zRotation; //reset x rotation
 
-        if (!perchDetect.isItGround)
+        if (!perchDetect.isItGround) //is the perch is in a tree
         {
-            perchDetect.perchIsUsed = true;
+            perchDetect.perchIsUsed = true; //perch is occupied
         }
-
+        //change to the right animatioin
         bird.birdAnimator.SetBool("Flying", false);
         bird.birdAnimator.SetBool("Walking", false);
         bird.birdAnimator.SetBool("Idle", true);
@@ -30,31 +27,27 @@ public class BirdPerchState : BirdBaseState
 
     public override void UpdateState(BirdStateManager bird)
     {
-        bird.timerToSwitchState += Time.deltaTime;
+        bird.timerToSwitchState += Time.deltaTime; //set timer
 
-        if (currentPerch == bird.perchListNum)
+        if (currentPerch == bird.perchListNum) //make sure that the random perch isn't the same as the original one
         {
-            bird.perchListNum = Random.Range(0, listLenght);
+            bird.perchListNum = Random.Range(0, bird.birdPerches.Count); //choose a random perch
         }
-        if (perchDetect.isPlayerNear)
+        if (perchDetect.isPlayerNear) //from the perch scipt, if player enters collider
         {
-            perchDetect.perchIsUsed = false;
+            perchDetect.perchIsUsed = false; //perch is not used anymore, and flies to different perch
             bird.SwitchState(bird.FlyingState);
         }
-        if (perchDetect.isItGround)
+        if (perchDetect.isItGround) //is the perch was on the groun
         {
-            bird.SwitchState(bird.GroundState);
+            bird.SwitchState(bird.GroundState); //activate ground state
         }
-
-        if (bird.randomNumber < bird.timerToSwitchState)
+        if (bird.randomNumber < bird.timerToSwitchState) //if it's time to switch to another state↓
         {
             bird.SwitchState(bird.FlyingState);
-            bird.timerToSwitchState = 0;
         }
     }
-
     public override void InRange(BirdStateManager bird)
     {
-        
     }
 }

@@ -26,7 +26,7 @@ public class AIWalk : MonoBehaviour
         }
         if (stopWalking)
         {
-            agent.SetDestination(transform.position);
+            agent.SetDestination(transform.position); //stop the npc
         }
         if (!stopWalking && agent.SetDestination(transform.position))
         {
@@ -49,7 +49,6 @@ public class AIWalk : MonoBehaviour
         if (waypointindex == waypoints.Length) //if this int gets bigger that the number of waypoints
         {
             waypointindex = 0; //set back to start, the first waypoint
-            
         }
     }
 }

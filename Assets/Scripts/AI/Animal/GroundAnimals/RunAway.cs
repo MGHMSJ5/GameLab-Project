@@ -6,17 +6,13 @@ using UnityEngine.AI;
 public class RunAway : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-
     [SerializeField] private Transform chaser;
-
     [SerializeField] private float displacementDist = 5f;
 
     private int randomInt;
     private bool canChangeRandomDirection = true;
     private int leftOrRight = 0; //if 0, then will go left, if 1, will go right
-
     public PlayerMovement playerMovement;
-    // Start is called before the first frame update
     void Start()
     {
         if (agent == null)
@@ -28,14 +24,8 @@ public class RunAway : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (chaser == null)
-        {
-            return;
-        }
-
         Vector3 normDir = (chaser.position - transform.position).normalized;
 
         if (Vector3.Distance(chaser.position, transform.position) < 6 && !playerMovement.isCrouching)
@@ -50,7 +40,6 @@ public class RunAway : MonoBehaviour
         }
 
     }
-
     private void MoveToPos(Vector3 pos)
     {
         agent.SetDestination(pos);
@@ -70,7 +59,6 @@ public class RunAway : MonoBehaviour
         {
             randomInt = Random.Range(0, 45);
         }
-
         canChangeRandomDirection = true;
 
     }

@@ -25,13 +25,13 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
-        if (binocularGO != null)
+        if (binocularGO != null) //if object is not destroyed
         {
-            if (!binocularGO.activeInHierarchy)
+            if (!binocularGO.activeInHierarchy) //if it's deactivated (it has been picked up)
             {
-                ActivateZooming();
-                Destroy(binocularGO);
-                binocularGO = null;
+                ActivateZooming(); //activate the function
+                Destroy(binocularGO); //destroy
+                binocularGO = null; //set to null
             }
         }
 
@@ -61,7 +61,7 @@ public class Pickup : MonoBehaviour
             {
                 Destroy(keyGO);
                 keyGO = null;
-                gateALeft.Play("Gate1Aopen");
+                gateALeft.Play("Gate1Aopen"); //open the gate, is needed for the story
                 gateBRight.Play("Gate1Bopen");
             }
         }

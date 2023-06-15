@@ -5,22 +5,22 @@ using TMPro;
 
 public class NotebookPages : MonoBehaviour
 {
-    public int currentPage = 0;
-    private string pageString;
+    [Header("References")]
     public TextMeshProUGUI pageNumberUI;
 
-    public List<GameObject> Pages = new List<GameObject>();
+    public MouseLook mouseLook;
 
     public GameObject notebookPages;
     public GameObject journalObj;
+    public GameObject scanDoneUI;
+
+    [Header("Journal")]
+    public List<GameObject> Pages = new List<GameObject>();
+    public int currentPage = 0;
     public bool isActive = false;
     public KeyCode getJournal;
 
     public bool canOpenJournal;
-
-    public GameObject scanDoneUI;
-
-    public MouseLook mouseLook;
 
     void Update()
     {

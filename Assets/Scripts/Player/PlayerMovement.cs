@@ -143,7 +143,8 @@ public class PlayerMovement : MonoBehaviour
     {
         defaultYPos = playerCameraObj.transform.position.y; //set the default pos to the current position of the camera
         timer += Time.deltaTime * (isCrouching ? crouchBobSpeed : walkBobSpeed); //set the speed of the bob walking. If player is crouching, then set to crouchbobspeed. If the player is not crouching, then set bobbingspeed for walking
-        playerCameraObj.transform.position = new Vector3(playerCameraObj.transform.position.x, defaultYPos + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : walkBobAmount), playerCameraObj.transform.position.z); //use the bobamount and Mathf.Sin  to geth the bobbinh
+        playerCameraObj.transform.position = 
+            new Vector3(playerCameraObj.transform.position.x, defaultYPos + Mathf.Sin(timer) * (isCrouching ? crouchBobAmount : walkBobAmount), playerCameraObj.transform.position.z); //use the bobamount and Mathf.Sin  to geth the bobbinh
         //the Mathf.Sin and bobamount decides the y position based on a singus wave.
     }
 }

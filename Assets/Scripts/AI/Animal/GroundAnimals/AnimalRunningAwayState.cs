@@ -12,30 +12,27 @@ public class AnimalRunningAwayState : AnimalBaseState
         animal.animator.SetBool("Walking", false);
         animal.animator.SetBool("Idle", false);
         animal.animator.SetBool("Running", true);
-        animal.agent.speed = animal.runningSpeed;
+        animal.agent.speed = animal.runningSpeed; //set speed to running speed
     }
 
     public override void UpdateState(AnimalStateManager animal)
     {
         animal.normDir = Quaternion.AngleAxis(randomInt, Vector3.up) * animal.normDir;
-        MoveToPos(animal.transform.position - (animal.normDir * animal.detectDistance), animal);
+        MoveToPos(animal.transform.position - (animal.normDir * animal.detectDistance), animal); //move away from the player
 
         if (Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.detectDistance || animal.playerMovement.isCrouching && Vector3.Distance(animal.chaser.position, animal.transform.position) > animal.crouchingDistance)
-        {
-            animal.SwitchState(animal.NormalState);
+        {//is the player, while not crouching, is further than a certain distance. Or if the player, while crouchig, is futher away from a certain distance
+            animal.SwitchState(animal.NormalState); //go back to doing idle and wandering
         }
 
-        if (canChangeRandomDirection)
+        if (canChangeRandomDirection) //change the angle of the animal running. To make the running away a bit different
         {
             SetRandomDirection();
         }
     }
-
     public override void InRange(AnimalStateManager animal)
     {
-
     }
-
     void MoveToPos(Vector3 pos, AnimalStateManager animal)
     {
         animal.agent.SetDestination(pos);
@@ -46,7 +43,7 @@ public class AnimalRunningAwayState : AnimalBaseState
     {
         timeToWait = Random.Range(2, 5);
         leftOrRight = Random.Range(0, 1);
-        currentTime += Time.deltaTime;
+        currentTime += Time.deltaTime; 
         if (timeToWait <= currentTime)
         {
             if (leftOrRight == 0)
@@ -61,5 +58,4 @@ public class AnimalRunningAwayState : AnimalBaseState
             currentTime = 0;
         }
     }
-
 }

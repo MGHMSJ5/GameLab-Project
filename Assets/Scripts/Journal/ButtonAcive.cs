@@ -21,9 +21,9 @@ public class ButtonAcive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (journalInfo.activeSelf)
+        if (journalInfo.activeSelf) //if the information of the animal/plant is active (is had been scanned)
         {
-            button.enabled = true;
+            button.enabled = true; //player can go to the information page
             animalOrPlantIcon.SetActive(true);
             highlight.SetActive(true);
             questionMarks.SetActive(false);
@@ -31,7 +31,7 @@ public class ButtonAcive : MonoBehaviour
 
         if (!infoNotification.hasSeen)
         {
-            highlight.SetActive(false);
+            highlight.SetActive(false); //player has seen the page, so highlight can go
         }
     }
 }

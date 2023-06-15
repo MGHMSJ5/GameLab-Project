@@ -13,33 +13,32 @@ public class BirdStateManager : MonoBehaviour
     public List<GameObject> birdPerches = new List<GameObject>();
     public int perchListNum = 0;
 
+    [Header("Variables")]
     public float flyingSpeed;
-
-    public NavMeshAgent agent;
-    public Transform chaser;
-    public float distanceWhenStartFlying = 5f;
-    public PlayerMovement playerMovement;
-    public Vector3 normDir = new Vector3();
+    public float walkingSpeed;
     public int detectDistance = 10;
     public int crouchDetect = 6;
 
     public LayerMask floorMask = 0;
 
-    public float walkingSpeed;
-
-    public float timerToSwitchState = 0;
-    public int randomNumber;
-
+    [Header("References")]
+    public NavMeshAgent agent;
+    public Transform chaser;
+    public PlayerMovement playerMovement;
     public Animator birdAnimator;
 
-    // Start is called before the first frame update
+    [Header("Used variables")]
+    public Vector3 normDir = new Vector3();
+
+    public float timerToSwitchState = 0;
+    public int randomNumber; //random number which is used to switch to flying state when in ground/perch state
+
     void Start()
     {
         playerMovement = chaser.GetComponent<PlayerMovement>();
 
-            currentState = FlyingState;
-
-            currentState.EnterState(this);
+        currentState = FlyingState;
+        currentState.EnterState(this);
 
         if (agent == null)
         {
@@ -50,7 +49,6 @@ public class BirdStateManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentState.UpdateState(this);

@@ -53,6 +53,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4156584802494114420}
     m_Modifications:
+    - target: {fileID: -8933084507186465975, guid: e03d7d201987c754eb11d847d66d29eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7ff1a824682b248a01be3fc841513e, type: 2}
+    - target: {fileID: -8933084507186465975, guid: e03d7d201987c754eb11d847d66d29eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7ff1a824682b248a01be3fc841513e, type: 2}
+    - target: {fileID: -8933084507186465975, guid: e03d7d201987c754eb11d847d66d29eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7ff1a824682b248a01be3fc841513e, type: 2}
     - target: {fileID: -8679921383154817045, guid: e03d7d201987c754eb11d847d66d29eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -133,6 +148,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stratiotes aloidesText
       objectReference: {fileID: 0}
+    - target: {fileID: 3695666860197271449, guid: e03d7d201987c754eb11d847d66d29eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 90e36cbf04d71ee4498b228864deab5f, type: 2}
+    - target: {fileID: 4008791811287642139, guid: e03d7d201987c754eb11d847d66d29eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 501793dfb50ac8947927e0c2b7a7ae23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03d7d201987c754eb11d847d66d29eb, type: 3}
 --- !u!4 &8944218483916359184 stripped

@@ -22,7 +22,7 @@ public class BirdGroundState : BirdBaseState
 
         DoMovement(bird);
 
-        if (Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.detectDistance && !bird.playerMovement.isCrouching || bird.playerMovement.isCrouching && Vector3.Distance(bird.chaser.position, bird.transform.position) > bird.crouchDetect)
+        if (Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.detectDistance && !bird.playerMovement.isCrouching || bird.playerMovement.isCrouching && Vector3.Distance(bird.chaser.position, bird.transform.position) < bird.crouchDetect)
         {
             bird.perchListNum = Random.Range(0, bird.birdPerches.Count); //random perch
             bird.SwitchState(bird.FlyingState);

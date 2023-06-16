@@ -32,7 +32,6 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit doorhit;
@@ -58,11 +57,11 @@ public class DoorScript : MonoBehaviour
                         audioDoorOpen.Play();
                     }
                     opened = !opened;
-
                     Dictionary<string, object> parameters = new Dictionary<string, object>()
-                    {
-                        { "doorIsOpen", true},
-                    };
+                        {
+                        { "doorIsOpen", true}
+
+                        };
                     AnalyticsService.Instance.CustomData("doorInteractable", parameters);
 
                 }

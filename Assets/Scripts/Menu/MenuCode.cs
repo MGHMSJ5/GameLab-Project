@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement; //to be able to change scenes in Unity
 public class MenuCode : MonoBehaviour
 {
     public Animator blackFade;
+
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
     public void PlayGame() //a function that'll be called whenever the 'Play'button is pressed
     {
         blackFade.SetBool("ToNothing", false);
